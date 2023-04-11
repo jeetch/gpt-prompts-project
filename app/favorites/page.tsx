@@ -1,7 +1,9 @@
-import getCurrentUser from "../actions/getCurrentUser";
-import getFavoriteListings from "../actions/getFavoriteListings";
-import ClientOnly from "../components/navbar/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
+import ClientOnly from "@/app/components/ClientOnly";
+
+import getCurrentUser from "@/app/actions/getCurrentUser";
+import getFavoriteListings from "@/app/actions/getFavoriteListings";
+
 import FavoritesClient from "./FavoritesClient";
 
 const ListingPage = async () => {
@@ -13,7 +15,7 @@ const ListingPage = async () => {
       <ClientOnly>
         <EmptyState
           title="No favorites found"
-          subtitle="Looks liike you ahve no favorites"
+          subtitle="Looks like you have no favorite listings."
         />
       </ClientOnly>
     );

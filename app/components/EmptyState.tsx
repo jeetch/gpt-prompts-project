@@ -9,7 +9,7 @@ import Button from "./Button";
 interface EmptyStateProps {
   title?: string;
   subtitle?: string;
-  showReset?: string;
+  showReset?: boolean;
 }
 
 const EmptyState: FC<EmptyStateProps> = ({

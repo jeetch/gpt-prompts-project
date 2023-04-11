@@ -1,7 +1,7 @@
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getListingById from "@/app/actions/getListingById";
 import EmptyState from "@/app/components/EmptyState";
-import ClientOnly from "@/app/components/navbar/ClientOnly";
+import ClientOnly from "@/app/components/ClientOnly";
 import { FC } from "react";
 import ListingClient from "./ListingClient";
 import getReservations from "@/app/actions/getReservations";
