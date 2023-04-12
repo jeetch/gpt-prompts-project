@@ -43,7 +43,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
           className="hidden md:block texzt-sm font-semibold py-3 px-4 rounded-full
       hover:bg-slate-800 transistion cursor-pointer"
         >
-          Airbnb your home
+          Rent your home
         </div>
         <div
           onClick={toggleOpen}

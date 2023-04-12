@@ -58,10 +58,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading
-        title="Welcome to GPT Prompts Project"
-        subtitle="Create an Account"
-      />
+      <Heading title="Welcome to Rent Your Home" subtitle="Create an Account" />
       <Input
         id="email"
         label="Email"
