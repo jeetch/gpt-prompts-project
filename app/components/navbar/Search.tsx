@@ -54,7 +54,8 @@ const Search: FC<SearchProps> = ({}) => {
     <div
       onClick={searchModal.onOpen}
       className="
-    border-[1px]
+      hover:scale-105
+          border-[1px]
     border-slate-600
     w-full
     md:w-auto
@@ -66,7 +67,7 @@ const Search: FC<SearchProps> = ({}) => {
     cursor-pointer
     "
     >
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-row items-center justify-between ">
         <div className="text-sm font-semibold px-6">{locationLabel}</div>
         <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
           {durationLabel}

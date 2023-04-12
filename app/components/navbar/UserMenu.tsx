@@ -41,14 +41,14 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
         <div
           onClick={onRent}
           className="hidden md:block texzt-sm font-semibold py-3 px-4 rounded-full
-      hover:bg-slate-800 transistion cursor-pointer"
+      hover:bg-slate-600 transistion cursor-pointer"
         >
           Rent your home
         </div>
         <div
           onClick={toggleOpen}
           className="p-4 md:py-1 md:px-2 border-[1px] border-slate-600 flex flex-row items-center gap-3 rounded-full
-          cursor-pointer hover:shadow-md transistion"
+          cursor-pointer hover:shadow-md hover:scale-105 transistion"
         >
           <AiOutlineMenu />
           <Avatar src={currentUser?.image} />
