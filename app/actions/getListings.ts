@@ -34,22 +34,9 @@ export default async function getListings(
         guestCount: guestCount ? { gte: +guestCount } : undefined,
         bathroomCount: bathroomCount ? { gte: +bathroomCount } : undefined,
         NOT: startDate && endDate
-          ? {
-              reservations: {
-                some: {
-                  OR: [
-                    {
-                      endDate: { gte: startDate },
-                      startDate: { lte: startDate },
-                    },
-                    {
-                      startDate: { lte: endDate },
-                      endDate: { gte: endDate },
-                    },
-                  ],
-                },
-              },
-            }
+          ? 
+              undefined
+            
           : undefined,
       };
 

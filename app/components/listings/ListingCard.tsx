@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useCallback, useMemo, useState } from "react";
-import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
+import { SafeListing, SafeUser } from "@/app/types";
 import { useRouter } from "next/navigation";
 import useCountries from "@/app/hooks/useCountries";
 import { format } from "date-fns";
@@ -16,7 +16,6 @@ interface ListingCardProps {
   data: SafeListing & {
     user: SafeUser;
   };
-  reservation?: SafeReservation;
   onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;
@@ -26,7 +25,6 @@ interface ListingCardProps {
 
 const ListingCard: FC<ListingCardProps> = ({
   data,
-  reservation,
   onAction,
   disabled,
   actionLabel,
@@ -68,25 +66,6 @@ const ListingCard: FC<ListingCardProps> = ({
     },
     [onAction, actionId, disabled]
   );
-
-  const price = useMemo(() => {
-    if (reservation) {
-      return reservation.totalPrice;
-    }
-
-    return data.price;
-  }, [reservation, data.price]);
-
-  const reservationDate = useMemo(() => {
-    if (!reservation) {
-      return null;
-    }
-
-    const start = new Date(reservation.startDate);
-    const end = new Date(reservation.endDate);
-
-    return `${format(start, "PP")} - ${format(end, "PP")}`;
-  }, [reservation]);
 
   return (
     <div className="relative flex flex-col col-span-1 gap-y-2  group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4">
