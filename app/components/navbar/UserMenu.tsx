@@ -64,22 +64,18 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
             {currentUser ? (
               <>
                 <MenuItem
-                  onClick={() => router.push("/trips")}
-                  label="My trips"
-                />
-                <MenuItem
                   onClick={() => router.push("/favorites")}
                   label="My favorites"
                 />
                 <MenuItem
-                  onClick={() => router.push("/reservations")}
-                  label="My reservations"
+                  onClick={() => router.push("/properties")}
+                  label="My Prompts"
                 />
                 <MenuItem
-                  onClick={() => router.push("/properties")}
-                  label="My properties"
+                  submit
+                  onClick={rentModal.onOpen}
+                  label="Submit your prompt"
                 />
-                <MenuItem onClick={rentModal.onOpen} label="Rent my home" />
                 <hr />
                 <MenuItem onClick={() => signOut()} label="Logout" />
               </>

@@ -111,7 +111,7 @@ const Categories: FC<CategoriesProps> = ({}) => {
 
   return (
     <Container>
-      <div className=" pt-4 flex flex-row items-center justify-center gap-2 overflow-x-auto">
+      <div className="block md:flex pt-4 flex-row items-center justify-center gap-2 flex-wrap">
         {categories.map((item) => (
           <CatergoryBox
             key={item.label}
