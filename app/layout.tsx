@@ -13,7 +13,7 @@ import SearchModal from "./components/modals/SearchModal";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "Rent Your Home",
+  title: "GPT Prompts Project",
   description: "Home renting website",
 };
 
@@ -39,7 +39,7 @@ export default async function RootLayout({
           <SearchModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
-        <div className="pb-20 pt-28">{children}</div>
+        <div className="bg-sky-950 pb-20 pt-28">{children}</div>
         <Footer />
       </body>
     </html>

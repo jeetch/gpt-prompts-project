@@ -58,8 +58,8 @@ const Search: FC<SearchProps> = ({}) => {
           border-[1px]
     border-slate-600
     w-full
-    md:w-auto
-    py-2
+    md:w-1/3
+    py-1
     rounded-full
     shadow-sm
     hover:shadow-md
@@ -67,16 +67,11 @@ const Search: FC<SearchProps> = ({}) => {
     cursor-pointer
     "
     >
-      <div className="flex flex-row items-center justify-between ">
-        <div className="text-sm font-semibold px-6">{locationLabel}</div>
-        <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
-          {durationLabel}
-        </div>
-        <div className="text-sm pl-6 pr-2 text-slate-400 flex flex-row items-center gap-3">
-          <div className="hidden sm:block"> {guestLabel} </div>
-          <div className="p-2 bg-lime-500 rounded-full text-white">
-            <BiSearch size={18} />
-          </div>
+      <div className="pr-1 flex flex-row items-center justify-between">
+        <div className="text-sm font-semibold px-6">Look for your prompts</div>
+
+        <div className="p-1  bg-emerald-500 rounded-full text-white">
+          <BiSearch size={18} />
         </div>
       </div>
     </div>

@@ -13,12 +13,12 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ currentUser }) => {
   return (
-    <div className="fixed w-full bg-slate-700 z-10 shadow-sm">
+    <div className="fixed w-full bg-sky-950 z-10 shadow-sm">
       <div
         className="
             py-4
             border-b-[1px]
-            border-slate-500
+            border-emerald-500
             text-slate-200
             "
       >

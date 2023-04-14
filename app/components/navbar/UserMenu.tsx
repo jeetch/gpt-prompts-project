@@ -40,10 +40,10 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onRent}
-          className="hidden md:block texzt-sm font-semibold py-3 px-4 rounded-full
-      hover:bg-slate-600 transistion cursor-pointer"
+          className="hidden md:block text-emerald-500 text-sm font-semibold py-3 px-4 rounded-full hover:scale-105 
+      bg-sky-900 transistion cursor-pointer"
         >
-          Rent your home
+          Submit Your Prompt
         </div>
         <div
           onClick={toggleOpen}

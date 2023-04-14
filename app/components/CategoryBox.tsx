@@ -49,12 +49,12 @@ const CatergoryBox: FC<CatergoryBoxProps> = ({
   return (
     <div
       onClick={handleClick}
-      className={`flex flex-col items-center justify-center gap-2 p-3 border-b-2
-    hover:text-neutral-300 hover:scale-90 transition cursor-pointer
-    ${selected ? "border-b-neutral-200" : "border-transparent"}
-    ${selected ? "text-neutral-100" : "text-neutral-200"}`}
+      className={`flex flex-col items-center justify-center gap-2 p-3 border bg-sky-900 rounded-full
+    hover:text-emerald-300 hover:scale-95 transition cursor-pointer
+    ${selected ? "border-emerald-900" : "border-transparent"}
+    ${selected ? "text-emerald-300" : "text-neutral-200"}`}
     >
-      <Icon size={26} />
+      {/* <Icon size={26} /> */}
       <div className="font-medium text-sm">{label}</div>
     </div>
   );

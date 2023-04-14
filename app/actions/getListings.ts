@@ -59,12 +59,22 @@ export default async function getListings(
       where: query,
       orderBy: {
         createdAt: 'desc'
+      },
+      include: {
+          user: true
       }
     });
 
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
+      user: {
+          ...listing.user,
+          createdAt: listing.user.createdAt.toISOString(),
+          updatedAt: listing.user.updatedAt.toISOString(),
+          emailVerified:  
+              listing.user.emailVerified?.toISOString() || null,
+      }
     }));
 
     return safeListings;

@@ -8,7 +8,7 @@ html,
 body,
 :root {
   height: 100%;
-  /* background-color: rgb(15 23 42); */
+  background-color: rgb(18, 34, 50);
 }
 
 .leaflet-bottom,

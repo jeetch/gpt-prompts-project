@@ -7,7 +7,14 @@ module.exports = {
  
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+          sky: {
+            900: '#182b3c',
+          950: '#122232'}}
+
+          
+    },
   },
   plugins: [],
 }

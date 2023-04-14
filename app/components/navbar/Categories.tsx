@@ -24,27 +24,27 @@ interface CategoriesProps {}
 
 export const categories = [
   {
-    label: "Beach",
+    label: "🗒️ All",
     icon: TbBeach,
     description: "This property is close to the beach!",
   },
   {
-    label: "Windmills",
+    label: "🎓 Education & Tutoring",
     icon: GiWindmill,
     description: "This property is has windmills!",
   },
   {
-    label: "Modern",
+    label: "💪 Health and Wellness",
     icon: MdOutlineVilla,
     description: "This property is modern!",
   },
   {
-    label: "Countryside",
+    label: "🏠 Home and Property",
     icon: TbMountain,
     description: "This property is in the countryside!",
   },
   {
-    label: "Pools",
+    label: "🏋️ Sports and Fitness",
     icon: TbPool,
     description: "This is property has a beautiful pool!",
   },
@@ -111,7 +111,7 @@ const Categories: FC<CategoriesProps> = ({}) => {
 
   return (
     <Container>
-      <div className=" pt-4 flex flex-row items-center justify-between overflow-x-auto">
+      <div className=" pt-4 flex flex-row items-center justify-center gap-2 overflow-x-auto">
         {categories.map((item) => (
           <CatergoryBox
             key={item.label}

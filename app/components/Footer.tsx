@@ -6,8 +6,8 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <div className="bg-white text-slate-500 w-full">
-      <div className="flex  flex-col items-center justify-between gap-4 border-t border-t-slate-200 py-5 md:h-10 md:flex-row md:py-0">
+    <div className="bg-sky-950 text-slate-500 w-full">
+      <div className="flex  flex-col items-center justify-between gap-4 border-t border-emerald-500 py-5 md:h-10 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-4">
           <p className="text-center text-sm leading-loose md:text-left">
             💻 Built by{" "}
