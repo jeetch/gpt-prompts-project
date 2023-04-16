@@ -1,5 +1,4 @@
 "use client";
-import useCountries from "@/app/hooks/useCountries";
 import useSearchModal from "@/app/hooks/useSearchModal";
 import { differenceInDays } from "date-fns";
 import { useSearchParams } from "next/navigation";
@@ -11,20 +10,11 @@ interface SearchProps {}
 const Search: FC<SearchProps> = ({}) => {
   const searchModal = useSearchModal();
   const params = useSearchParams();
-  const { getByValue } = useCountries();
 
   const locationValue = params?.get("locationValue");
   const startDate = params?.get("startDate");
   const endDate = params?.get("endDate");
   const guestCount = params?.get("guestCount");
-
-  const locationLabel = useMemo(() => {
-    if (locationValue) {
-      return getByValue(locationValue as string)?.label;
-    }
-
-    return "Anywhere";
-  }, [locationValue, getByValue]);
 
   const durationLabel = useMemo(() => {
     if (startDate && endDate) {

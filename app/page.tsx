@@ -1,8 +1,8 @@
 import getCurrentUser from "./actions/getCurrentUser";
-import getListings, { IListingsParams } from "./actions/getListings";
+import getPosts, { IListingsParams } from "./actions/getPosts";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
-import ListingCard from "./components/listings/ListingCard";
+import PostCard from "./components/posts/PostCard";
 import ClientOnly from "./components/ClientOnly";
 
 interface HomeProps {
@@ -10,11 +10,11 @@ interface HomeProps {
 }
 
 const Home = async ({ searchParams }: HomeProps) => {
-  const listings = await getListings(searchParams);
+  const posts = await getPosts(searchParams);
 
   const currentUser = await getCurrentUser();
 
-  if (listings.length == 0) {
+  if (posts.length == 0) {
     return (
       <ClientOnly>
         <EmptyState showReset />
@@ -26,17 +26,13 @@ const Home = async ({ searchParams }: HomeProps) => {
       <Container>
         <div
           className="
-pt-24 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  xl:grid-cols-4 2xl:grid-cols-4
-gap-8  
-"
+            pt-2 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  xl:grid-cols-4 2xl:grid-cols-4
+            gap-8  
+            "
         >
-          {listings.map((listing) => {
+          {posts.map((post) => {
             return (
-              <ListingCard
-                currentUser={currentUser}
-                key={listing.id}
-                data={listing}
-              />
+              <PostCard currentUser={currentUser} key={post.id} data={post} />
             );
           })}
         </div>

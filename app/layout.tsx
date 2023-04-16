@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
 import LoginModal from "./components/modals/LoginModal";
-import RentModal from "./components/modals/RentModal";
+import SubmitPromptModal from "./components/modals/SubmitPromptModal";
 
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
@@ -34,12 +34,14 @@ export default async function RootLayout({
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal />
-          <RentModal />
+          <SubmitPromptModal />
           <LoginModal />
           <SearchModal />
-          <Navbar currentUser={currentUser} />
+          <div className="bg-sky-950">
+            <Navbar currentUser={currentUser} />
+            <div>{children}</div>
+          </div>
         </ClientOnly>
-        <div className="bg-sky-950 pb-20 pt-28">{children}</div>
         <Footer />
       </body>
     </html>

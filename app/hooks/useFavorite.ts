@@ -8,11 +8,11 @@ import { SafeUser } from "@/app/types";
 import useLoginModal from "./useLoginModal";
 
 interface IUseFavorite {
-  listingId: string;
+  postId: string;
   currentUser?: SafeUser | null
 }
 
-const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
+const useFavorite = ({ postId, currentUser }: IUseFavorite) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
@@ -20,8 +20,8 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const hasFavorited = useMemo(() => {
     const list = currentUser?.favoriteIds || [];
 
-    return list.includes(listingId);
-  }, [currentUser, listingId]);
+    return list.includes(postId);
+  }, [currentUser, postId]);
 
   const toggleFavorite = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -31,25 +31,56 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
     }
 
     try {
+
+      console.log("Hello0o0!")
       let request;
 
       if (hasFavorited) {
-        request = () => axios.delete(`/api/favorites/${listingId}`);
+        request = () => axios.delete(`/api/favorites/${postId}`);
       } else {
-        request = () => axios.post(`/api/favorites/${listingId}`);
+        console.log("Hello!")
+        request = () => axios.post(`/api/favorites/${postId}`);
       }
 
       await request();
       router.refresh();
-      toast.success('Success');
+
+      {(hasFavorited) ? 
+      toast("💔 Prompt un-favorited", {
+        position: "bottom-right",
+        style: {
+          borderRadius: "10px",
+          background: "#21374a",
+          color: "#fff",
+        },
+      })
+       : 
+      toast("❤️ Prompt favorited!", {
+        position: "bottom-right",
+        style: {
+          borderRadius: "10px",
+          background: "#21374a",
+          color: "#fff",
+        },
+      })
+      }
+      
     } catch (error) {
-      toast.error('Something went wrong.');
+      toast("😓 Something went wrong", {
+        position: "bottom-right",
+        style: {
+          borderRadius: "10px",
+          background: "#21374a",
+          color: "#fff",
+        },
+      });
+      
     }
   }, 
   [
     currentUser, 
     hasFavorited, 
-    listingId, 
+    postId, 
     loginModal,
     router
   ]);

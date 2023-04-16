@@ -2,8 +2,8 @@ import EmptyState from "../components/EmptyState";
 import ClientOnly from "../components/ClientOnly";
 
 import getCurrentUser from "../actions/getCurrentUser";
-import PropertiesClient from "./PropertiesClient";
-import getListings from "../actions/getListings";
+import UserPromptsClient from "./UserPromptsClient";
+import getPosts from "../actions/getPosts";
 
 const PropertiesPage = async () => {
   const currentUser = await getCurrentUser();
@@ -16,16 +16,16 @@ const PropertiesPage = async () => {
     );
   }
 
-  const listings = await getListings({
+  const posts = await getPosts({
     userId: currentUser.id,
   });
 
-  if (listings.length == 0) {
+  if (posts.length == 0) {
     return (
       <ClientOnly>
         <EmptyState
-          title="No properties found"
-          subtitle="Looks like you have no properties"
+          title="No prompts found"
+          subtitle="Looks like you have not sumitted any prompts!"
         />
       </ClientOnly>
     );
@@ -33,7 +33,7 @@ const PropertiesPage = async () => {
 
   return (
     <ClientOnly>
-      <PropertiesClient listings={listings} currentUser={currentUser} />
+      <UserPromptsClient posts={posts} currentUser={currentUser} />
     </ClientOnly>
   );
 };

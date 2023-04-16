@@ -4,12 +4,11 @@ import Avatar from "../Avatar";
 import { AiOutlineMenu } from "react-icons/ai";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-import LoginModal from "../modals/LoginModal";
 import useLoginrModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
-import useRentModal from "@/app/hooks/useRentModal";
 import { useRouter } from "next/navigation";
+import useSubmitPromptModal from "@/app/hooks/useSubmitPostModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -19,7 +18,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginrModal();
-  const rentModal = useRentModal();
+  const submitPromptModal = useSubmitPromptModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,27 +26,27 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
     setIsOpen((value) => !value);
   }, []);
 
-  const onRent = useCallback(() => {
+  const onSubmitPrompt = useCallback(() => {
     if (!currentUser) {
       return loginModal.onOpen();
     }
 
-    rentModal.onOpen();
-  }, [currentUser, loginModal, rentModal]);
+    submitPromptModal.onOpen();
+  }, [currentUser, loginModal, submitPromptModal]);
 
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
-          onClick={onRent}
-          className="hidden md:block text-emerald-500 text-sm font-semibold py-3 px-4 rounded-full hover:scale-105 
+          onClick={onSubmitPrompt}
+          className="hidden md:block text-emerald-500 text-sm font-semibold py-2 px-2 rounded-full hover:scale-105 
       bg-sky-900 transistion cursor-pointer"
         >
           Submit Your Prompt
         </div>
         <div
           onClick={toggleOpen}
-          className="p-4 md:py-1 md:px-2 border-[1px] border-slate-600 flex flex-row items-center gap-3 rounded-full
+          className="p-2 md:py-1 md:px-2 border-[1px] border-slate-600 flex flex-row items-center gap-3 rounded-full
           cursor-pointer hover:shadow-md hover:scale-105 transistion"
         >
           <AiOutlineMenu />
@@ -68,12 +67,12 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
                   label="My favorites"
                 />
                 <MenuItem
-                  onClick={() => router.push("/properties")}
+                  onClick={() => router.push("/userprompts")}
                   label="My Prompts"
                 />
                 <MenuItem
                   submit
-                  onClick={rentModal.onOpen}
+                  onClick={submitPromptModal.onOpen}
                   label="Submit your prompt"
                 />
                 <hr />

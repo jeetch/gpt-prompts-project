@@ -13,7 +13,7 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ currentUser }) => {
   return (
-    <div className="fixed w-full bg-sky-950 z-10 shadow-sm">
+    <div className="sticky top-0 w-full bg-sky-950 z-10 shadow-sm">
       <div
         className="
             py-4

@@ -10,6 +10,7 @@ interface ButtonProps {
   outline?: boolean;
   small?: boolean;
   icon?: IconType;
+  deletePrompt?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -19,17 +20,24 @@ const Button: FC<ButtonProps> = ({
   outline,
   small,
   icon: Icon,
+  deletePrompt = false,
 }) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
       className={`
-  relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:opacity-80 
-  transition w-full 
-  ${outline ? "bg-white" : "bg-slate-800"}
-  ${outline ? "border-black" : "bg-slate-800"}
-  ${outline ? "text-black" : "text-white"}
+  relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg 
+  transition w-full border border-none  hover:shadow-sm
+  ${
+    deletePrompt
+      ? "bg-red-900 hover:bg-red-900/80"
+      : outline
+      ? "bg-none hover:bg-sky-900 "
+      : "bg-emerald-800  hover:bg-emerald-800/80"
+  }
+  
+  ${outline ? "text-neutral-300" : "text-neutral-200"}
   ${small ? "py-1" : "py-3"}
   ${small ? "text-sm" : "text-md"}
   ${small ? "font-light" : "font-semibold"}

@@ -2,105 +2,47 @@
 
 import { FC } from "react";
 import Container from "../Container";
-import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
-import {
-  GiBarn,
-  GiBoatFishing,
-  GiCactus,
-  GiCastle,
-  GiCaveEntrance,
-  GiForestCamp,
-  GiIsland,
-  GiWindmill,
-} from "react-icons/gi";
-import { FaSkiing } from "react-icons/fa";
-import { BsSnow } from "react-icons/bs";
-import { IoDiamond } from "react-icons/io5";
-import { MdOutlineVilla } from "react-icons/md";
 import CatergoryBox from "../CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface CategoriesProps {}
 
 export const categories = [
   {
-    label: "🗒️ All",
-    icon: TbBeach,
-    description: "This property is close to the beach!",
-  },
-  {
-    label: "🎓 Education & Tutoring",
-    icon: GiWindmill,
+    label: "Education & Tutoring",
+    icon: "🎓",
     description: "This property is has windmills!",
   },
   {
-    label: "💪 Health and Wellness",
-    icon: MdOutlineVilla,
+    label: "Health and Wellness",
+    icon: "💪",
     description: "This property is modern!",
   },
   {
-    label: "🏠 Home and Property",
-    icon: TbMountain,
+    label: "Home and Property",
+    icon: "🏠",
     description: "This property is in the countryside!",
   },
   {
-    label: "🏋️ Sports and Fitness",
-    icon: TbPool,
+    label: "Sports and Fitness",
+    icon: "🏋️",
     description: "This is property has a beautiful pool!",
   },
   {
-    label: "Islands",
-    icon: GiIsland,
+    label: "Coding and Programming",
+    icon: "💻",
     description: "This property is on an island!",
   },
   {
-    label: "Lake",
-    icon: GiBoatFishing,
+    label: "Cooking and Recipes",
+    icon: "🍳",
     description: "This property is near a lake!",
-  },
-  {
-    label: "Skiing",
-    icon: FaSkiing,
-    description: "This property has skiing activies!",
-  },
-  {
-    label: "Castles",
-    icon: GiCastle,
-    description: "This property is an ancient castle!",
-  },
-  {
-    label: "Caves",
-    icon: GiCaveEntrance,
-    description: "This property is in a spooky cave!",
-  },
-  {
-    label: "Camping",
-    icon: GiForestCamp,
-    description: "This property offers camping activities!",
-  },
-  {
-    label: "Arctic",
-    icon: BsSnow,
-    description: "This property is in arctic environment!",
-  },
-  {
-    label: "Desert",
-    icon: GiCactus,
-    description: "This property is in the desert!",
-  },
-  {
-    label: "Barns",
-    icon: GiBarn,
-    description: "This property is in a barn!",
-  },
-  {
-    label: "Lux",
-    icon: IoDiamond,
-    description: "This property is brand new and luxurious!",
   },
 ];
 
 const Categories: FC<CategoriesProps> = ({}) => {
+  const router = useRouter();
   const params = useSearchParams();
   const category = params?.get("category");
   const pathName = usePathname();
@@ -111,7 +53,16 @@ const Categories: FC<CategoriesProps> = ({}) => {
 
   return (
     <Container>
-      <div className="block md:flex pt-4 flex-row items-center justify-center gap-2 flex-wrap">
+      <div className="flex flex-wrap justify-center p-5 items-center  gap-2 ">
+        <div
+          onClick={() => router.push("/")}
+          className={`text-xs p-1 sm:text-sm sm:p-2 sm:gap-2  md:gap-4
+      border bg-sky-900 rounded-full text-neutral-200
+      hover:text-emerald-300 hover:scale-95 transition cursor-pointer border-transparent text-neutral-200"}`}
+        >
+          {"✔️ All"}
+        </div>
+
         {categories.map((item) => (
           <CatergoryBox
             key={item.label}

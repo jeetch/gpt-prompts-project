@@ -4,7 +4,7 @@ import prisma from '@/app/libs/prismadb'
 
 
 interface IParams {
-    listingId?: string;
+    postId?: string;
 }
 
 export async function DELETE(
@@ -16,19 +16,19 @@ export async function DELETE(
 
         if (!currentUser) { return NextResponse.error(); }
 
-        const { listingId } = params;
+        const { postId } = params;
 
-        if (!listingId || typeof listingId !== 'string') {
+        if (!postId || typeof postId !== 'string') {
             throw new Error('Invalid ID');
         }
 
-        const listing  = await prisma.listing.deleteMany({
+        const post  = await prisma.post.deleteMany({
             where: {
-                id: listingId,
+                id: postId,
                 userId: currentUser.id
             }
         })
 
-        return NextResponse.json(listing);
+        return NextResponse.json(post);
 }
 
