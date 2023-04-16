@@ -58,7 +58,7 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome back" subtitle="Login to your account!" />
+      <Heading title="Welcome back 👋" subtitle="Login to your account" />
       <Input
         id="email"
         label="Email"
@@ -82,7 +82,6 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
 
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
-      <hr />
       <Button
         outline
         label="Continue with Google"
@@ -95,12 +94,12 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
         icon={AiFillGithub}
         onClick={() => signIn("github")}
       />
-      <div className="text-neutral-500 text-center mt-4 font-light">
+      <div className="text-xs text-neutral-300 text-center mt-4 font-light">
         <div className=" flex flex-row items-center justify-center gap-2">
-          <div>First time using Rent Your Home?</div>
+          <div>First time using GPT Prompts Project?</div>
           <div
             onClick={toggle}
-            className="text-neutral-800 cursor-pointer hover:underline"
+            className="font-bold text-neutral-400 cursor-pointer hover:underline"
           >
             Create an account
           </div>

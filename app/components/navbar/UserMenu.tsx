@@ -50,7 +50,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
           cursor-pointer hover:shadow-md hover:scale-105 transistion"
         >
           <AiOutlineMenu />
-          <Avatar src={currentUser?.image} />
+          <Avatar src={currentUser?.image} currentUser={currentUser} />
         </div>
       </div>
 

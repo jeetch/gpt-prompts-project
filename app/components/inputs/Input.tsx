@@ -41,7 +41,7 @@ const Input: FC<InputProps> = ({
         className={`peer w-full p-4 pt-6 font-light bg-sky-600/50 border-2 rounded-md z-10 outline-none transition 
         disabled:opacity-70 disabled:cursor-not-allowed text-neutral-100
         ${formatPrice ? "pl-9" : "pl-4"}
-        ${errors[id] ? "border-emerald-600" : "border-neutral-500"}
+        ${errors[id] ? "border-emerald-600" : "border-sky-600/50"}
         ${errors[id] ? "focus:border-emerald-500" : "focus:border-emerald-600"}
         `}
       />

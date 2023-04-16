@@ -58,7 +58,10 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome to Rent Your Home" subtitle="Create an Account" />
+      <Heading
+        title="Welcome to GPT Prompts Project 👋"
+        subtitle="Create an account"
+      />
       <Input
         id="email"
         label="Email"
@@ -89,7 +92,6 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
 
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
-      <hr />
       <Button
         outline
         label="Continue with Google"
@@ -102,12 +104,12 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
         icon={AiFillGithub}
         onClick={() => signIn("github")}
       />
-      <div className="text-neutral-500 text-center mt-4 font-light">
+      <div className="text-xs text-neutral-300 text-center mt-4 font-light">
         <div className=" flex flex-row items-center justify-center gap-2">
           <div>Already have an account?</div>
           <div
             onClick={toggle}
-            className="text-neutral-800 cursor-pointer hover:underline"
+            className="font-bold text-neutral-400 cursor-pointer hover:underline"
           >
             Login
           </div>
@@ -120,7 +122,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Register"
+      title="Sign Up"
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}

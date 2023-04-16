@@ -119,7 +119,6 @@ const PostCard: FC<PostCardProps> = ({
 
       <div className="text-xs font-light flex flex-row items-center gap-2 text-neutral-400">
         <div> Contributed by {data.user?.name} </div>
-        {/* <Avatar src={data.user?.image} /> */}
       </div>
       {onAction && actionLabel && (
         <Button

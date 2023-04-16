@@ -23,7 +23,7 @@ const Footer: FC<FooterProps> = ({}) => {
           </a>
           , source code is available on{" "}
           <a
-            href="https://github.com/jeetch/rent-your-home"
+            href="https://github.com/jeetch/gpt-prompts-project"
             className="font-medium underline underline-offset-4"
           >
             GitHub
