@@ -16,16 +16,17 @@ const Search: FC<SearchProps> = ({}) => {
   const endDate = params?.get("endDate");
   const guestCount = params?.get("guestCount");
 
-  const keyDownHandler = (event: KeyboardEvent) => {
-    event.preventDefault();
-    if (event.ctrlKey && event.key === "k") {
-      searchModal.onOpen();
-    }
-  };
+  // const keyDownHandler = (event: KeyboardEvent) => {
+  //   event.preventDefault();
+  //   if (event.ctrlKey && event.key === "k") {
+  //     searchModal.onOpen();
+  //     event.stopPropagation();
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("keydown", keyDownHandler);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("keydown", keyDownHandler);
+  // });
 
   return (
     <div
