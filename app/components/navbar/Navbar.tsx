@@ -1,11 +1,12 @@
 "use client";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 import { SafeUser } from "@/app/types";
 import Categories from "./Categories";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
