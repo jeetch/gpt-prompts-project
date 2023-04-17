@@ -40,13 +40,27 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
       setIsLoading(false);
       if (callback?.ok) {
-        toast.success("Logged In");
+        toast.success("Logged In!", {
+          position: "bottom-right",
+          style: {
+            borderRadius: "10px",
+            background: "#21374a",
+            color: "#fff",
+          },
+        });
         router.refresh();
         loginModal.onClose();
       }
 
       if (callback?.error) {
-        toast.error(callback.error);
+        toast.error(callback.error, {
+          position: "bottom-right",
+          style: {
+            borderRadius: "10px",
+            background: "#21374a",
+            color: "#fff",
+          },
+        });
       }
     });
   };
