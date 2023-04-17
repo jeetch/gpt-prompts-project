@@ -1235,7 +1235,7 @@
     "@babel/runtime" "^7.8.7"
     "csstype" "^3.0.2"
 
-"draft-js@>=0.11.7":
+"draft-js@^0.11.7", "draft-js@>=0.11.7":
   "integrity" "sha512-ne7yFfN4sEL82QPQEn80xnADR8/Q6ALVworbC5UOSzOvjffmYfFsr3xSZtxbIirti14R7Y33EZC5rivpLgIbsg=="
   "resolved" "https://registry.npmjs.org/draft-js/-/draft-js-0.11.7.tgz"
   "version" "0.11.7"
