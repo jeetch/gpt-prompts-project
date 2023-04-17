@@ -56,11 +56,9 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Where do you wanna go?"
-        subtitle="Find the perfect location"
+        title="What are you looking for?"
+        subtitle="Find the perfect prompt"
       />
-
-      <hr />
     </div>
   );
 
