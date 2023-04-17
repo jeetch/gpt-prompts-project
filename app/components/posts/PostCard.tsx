@@ -141,10 +141,9 @@ const PostCard: FC<PostCardProps> = ({
       > */}
       <ShowMoreText
         lines={3}
-        onClick={() => router.push(`/posts/${data.id}`)}
         more="Show more"
         less="Show less"
-        className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
+        className="select-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
         border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md h-auto focus:outline-none focus:ring focus:ring-emerald-600"
         anchorClass="show-more-less-clickable"
         expanded={false}
