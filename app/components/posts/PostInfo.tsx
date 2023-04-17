@@ -65,7 +65,12 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
         <div className="h-auto select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border border-emerald-900 p-2 rounded-md cursor-text hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600">
           <HighlightWithinTextarea
             value={promptValue}
-            highlight={/\[([^\]]+)\]/g}
+            highlight={[
+              {
+                highlight: /\[([^\]]+)\]/g,
+                className: "blue",
+              },
+            ]}
             onChange={(promptValue) => setPromptValue(promptValue)}
           />
         </div>

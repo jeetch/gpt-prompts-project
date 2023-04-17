@@ -112,7 +112,7 @@ const SubmitPromptModal: FC = ({}) => {
   }, [step]);
 
   let bodyContent = (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-2">
       <Heading
         title="Which of these best describes your prompt?"
         subtitle="Pick a category"

@@ -20,12 +20,9 @@ const CategoryInput: FC<CategoryInputProps> = ({
     <div
       onClick={() => onClick(label)}
       className={`
-    rounded-full
-    border-2
-    p-4
-    flex
-    flex-col
-    gap-3
+      flex mt-4flex-col items-center justify-center 
+      gap-1 p-2 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4
+      border rounded-full
     hover:border-emerald-500
     transition
     cursor-pointer
