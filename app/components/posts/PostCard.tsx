@@ -116,7 +116,7 @@ const PostCard: FC<PostCardProps> = ({
   }, [data.category, params, router]);
 
   return (
-    <div className="h-fit flex flex-col col-span-1 gap-y-2  group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4">
+    <div className="h-fit relative flex flex-col col-span-1 gap-y-2  group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4">
       <div className="absolute top-2 right-2">
         <HeartButton postId={data.id} currentUser={currentUser} />
       </div>
