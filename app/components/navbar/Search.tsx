@@ -16,17 +16,17 @@ const Search: FC<SearchProps> = ({}) => {
   const endDate = params?.get("endDate");
   const guestCount = params?.get("guestCount");
 
-  // const keyDownHandler = (event: KeyboardEvent) => {
-  //   event.preventDefault();
-  //   if (event.ctrlKey && event.key === "k") {
-  //     searchModal.onOpen();
-  //     event.stopPropagation();
-  //   }
-  // };
+  const keyDownHandler = (event: KeyboardEvent) => {
+    if (event.ctrlKey && event.key === "k") {
+      event.preventDefault();
+      searchModal.onOpen();
+      event.stopPropagation();
+    }
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener("keydown", keyDownHandler);
-  // });
+  useEffect(() => {
+    window.addEventListener("keydown", keyDownHandler);
+  });
 
   return (
     <div
@@ -55,9 +55,9 @@ const Search: FC<SearchProps> = ({}) => {
 
         <div className="flex">
           <div className="hidden lg:flex items-center space-x-1 text-xs text-gray-400 scale-75">
-            <div className="bg-white/10 p-1 rounded-xl">Control</div>
+            <div className="bg-white/10 p-1 rounded-md ">Ctrl</div>
             <span>+</span>
-            <div className="bg-white/10 p-1 rounded-xl">K</div>
+            <div className="bg-white/10 p-1 rounded-md">K</div>
           </div>
           <div className="p-1  bg-emerald-500 rounded-full text-white">
             <BiSearch size={18} />
