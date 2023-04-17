@@ -35,7 +35,9 @@ const Search: FC<SearchProps> = ({}) => {
           border-[1px]
     border-slate-600
     w-full
-    md:w-1/3
+    sm:w-2/6
+    lg:w-1/2
+   
     py-1
     rounded-full
     shadow-sm
@@ -46,10 +48,10 @@ const Search: FC<SearchProps> = ({}) => {
     "
     >
       <div className="pr-1 flex flex-row items-center justify-between">
-        <div className="hidden sm:block text-sm hover:font-semibold px-6">
+        <div className="hidden md:block text-sm hover:font-semibold px-6">
           Look for your prompts
         </div>
-        <div className="block sm:hidden text-sm font-semibold px-6">
+        <div className="block md:hidden text-sm font-semibold px-6">
           Search prompts
         </div>
 
