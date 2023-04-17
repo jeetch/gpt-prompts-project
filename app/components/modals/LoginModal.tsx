@@ -41,7 +41,7 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
       setIsLoading(false);
       if (callback?.ok) {
         toast.success("Logged In!", {
-          position: "bottom-right",
+          position: "top-center",
           style: {
             borderRadius: "10px",
             background: "#21374a",
@@ -54,7 +54,7 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
 
       if (callback?.error) {
         toast.error(callback.error, {
-          position: "bottom-right",
+          position: "top-center",
           style: {
             borderRadius: "10px",
             background: "#21374a",

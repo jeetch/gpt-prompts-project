@@ -22,7 +22,7 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
     navigator.clipboard.writeText(prompt);
 
     toast("Prompt copied to clipboard!", {
-      position: "bottom-right",
+      position: "top-center",
       icon: "👍",
       style: {
         borderRadius: "10px",
@@ -36,7 +36,7 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
     navigator.clipboard.writeText(prompt);
 
     toast("Prompt copied to clipboard! Navigating to ChatGPT", {
-      position: "bottom-right",
+      position: "top-center",
       icon: "👍",
       style: {
         borderRadius: "10px",

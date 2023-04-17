@@ -38,7 +38,7 @@ const PostCard: FC<PostCardProps> = ({
     setCopied(true);
 
     toast("Prompt copied to clipboard!", {
-      position: "bottom-right",
+      position: "top-center",
       icon: "👍",
       style: {
         borderRadius: "10px",
@@ -53,7 +53,7 @@ const PostCard: FC<PostCardProps> = ({
     setCopied(true);
 
     toast("Prompt copied to clipboard! Navigating to ChatGPT", {
-      position: "bottom-right",
+      position: "top-center",
       icon: "👍",
       style: {
         borderRadius: "10px",
