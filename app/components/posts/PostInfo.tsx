@@ -22,7 +22,7 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
   const [promptValue, setPromptValue] = useState(prompt);
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(prompt);
+    navigator.clipboard.writeText(promptValue);
 
     toast("Prompt copied to clipboard!", {
       position: "bottom-center",
@@ -36,7 +36,7 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
   };
 
   const handleGPTCopyClick = () => {
-    navigator.clipboard.writeText(prompt);
+    navigator.clipboard.writeText(promptValue);
 
     toast("Prompt copied to clipboard! Navigating to ChatGPT", {
       position: "bottom-center",
@@ -65,7 +65,7 @@ const PostInfo: FC<PostInfoProps> = ({ prompt, category }) => {
         <div className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border border-emerald-900 p-2 rounded-md cursor-text hover:shadow-md h-[200px] focus:outline-none focus:ring focus:ring-emerald-600">
           <HighlightWithinTextarea
             value={promptValue}
-            highlight={"furniture"}
+            highlight={/\[([^\]]+)\]/g}
             onChange={(promptValue) => setPromptValue(promptValue)}
           />
         </div>

@@ -12,6 +12,7 @@ import { SiOpenai } from "react-icons/si";
 import { categories } from "../navbar/Categories";
 import qs from "query-string";
 import ShowMoreText from "react-show-more-text";
+import { AiFillEdit } from "react-icons/ai";
 
 interface PostCardProps {
   data: SafePost & {
@@ -144,7 +145,7 @@ const PostCard: FC<PostCardProps> = ({
         more="Show more"
         less="Show less"
         className="select-text cursor-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
-        border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600"
+        border-emerald-900 p-2 rounded-md hover:border-emerald-700 hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600"
         anchorClass="show-more-less-clickable"
         expanded={false}
         width={280}
@@ -152,10 +153,18 @@ const PostCard: FC<PostCardProps> = ({
       >
         {data.prompt}
       </ShowMoreText>
+
       {/* </textarea> */}
       <div className="flex flex-row justify-content items-center gap-2">
-        <ButtonUi variant="subtle" size="sm" onClick={handleCopyClick}>
-          <IoCopy className="mr-2 h-4 w-4" /> Copy to clipboard
+        <ButtonUi
+          variant="subtle"
+          size="sm"
+          onClick={() => router.push(`/posts/${data.id}`)}
+        >
+          <AiFillEdit className="mr-2 h-4 w-4" /> Edit
+        </ButtonUi>
+        <ButtonUi variant="ghost" size="sm" onClick={handleCopyClick}>
+          <IoCopy className="mr-2 h-4 w-4" /> Copy
         </ButtonUi>
         <ButtonUi variant="ghost" size="sm" onClick={handleGPTCopyClick}>
           <SiOpenai className="mr-2 h-4 w-4" />
