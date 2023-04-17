@@ -11,8 +11,8 @@ const Logo = () => {
         onClick={() => router.push("/")}
         alt="logo"
         className="block sm:hidden cursor-pointer hover:scale-105 transition"
-        height="18"
-        width="100"
+        height="12"
+        width="80"
         src="/images/logo-small.png"
       />
       <Image
