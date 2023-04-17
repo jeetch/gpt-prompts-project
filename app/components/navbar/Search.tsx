@@ -4,7 +4,6 @@ import { differenceInDays } from "date-fns";
 import { useSearchParams } from "next/navigation";
 import { FC, useEffect, useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
-import Key from "react-key-icons";
 
 interface SearchProps {}
 
@@ -53,7 +52,6 @@ const Search: FC<SearchProps> = ({}) => {
           Search prompts
         </div>
 
-        {/* Add the "Ctrl + K" keys icon here */}
         <div className="flex">
           <div className="hidden lg:flex items-center space-x-1 text-xs text-gray-400 scale-75">
             <div className="bg-white/10 p-1 rounded-xl">Control</div>
