@@ -1,5 +1,6 @@
 "use client";
-import { FC, useState, useCallback } from "react";
+
+import { FC, useState, useCallback, useRef, useEffect } from "react";
 import Avatar from "../Avatar";
 import { AiOutlineMenu } from "react-icons/ai";
 import MenuItem from "./MenuItem";
@@ -34,8 +35,26 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
     submitPromptModal.onOpen();
   }, [currentUser, loginModal, submitPromptModal]);
 
+  const userMenuRef = useRef<HTMLDivElement | null>(null);
+
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (
+      userMenuRef.current &&
+      !userMenuRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={userMenuRef}>
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onSubmitPrompt}
