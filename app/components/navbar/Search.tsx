@@ -58,7 +58,12 @@ const Search: FC<SearchProps> = ({}) => {
     "
     >
       <div className="pr-1 flex flex-row items-center justify-between">
-        <div className="text-sm font-semibold px-6">Look for your prompts</div>
+        <div className="hidden sm:block text-sm font-semibold px-6">
+          Look for your prompts
+        </div>
+        <div className="block sm:hidden text-sm font-semibold px-6">
+          Search prompts
+        </div>
 
         <div className="p-1  bg-emerald-500 rounded-full text-white">
           <BiSearch size={18} />
