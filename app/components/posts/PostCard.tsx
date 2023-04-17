@@ -11,6 +11,7 @@ import { toast } from "react-hot-toast";
 import { SiOpenai } from "react-icons/si";
 import { categories } from "../navbar/Categories";
 import qs from "query-string";
+import ShowMoreText from "react-show-more-text";
 
 interface PostCardProps {
   data: SafePost & {
@@ -133,13 +134,25 @@ const PostCard: FC<PostCardProps> = ({
       >
         {data.title}
       </div>
-      <textarea
+      {/* <textarea
         className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
      border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md h-[200px] focus:outline-none focus:ring focus:ring-emerald-600"
         onClick={() => {}}
+      > */}
+      <ShowMoreText
+        lines={3}
+        more="Show more"
+        less="Show less"
+        className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
+        border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md h-auto focus:outline-none focus:ring focus:ring-emerald-600"
+        anchorClass="show-more-less-clickable"
+        expanded={false}
+        width={280}
+        truncatedEndingComponent={"... "}
       >
         {data.prompt}
-      </textarea>
+      </ShowMoreText>
+      {/* </textarea> */}
       <div className="flex flex-row justify-content items-center gap-2">
         <ButtonUi variant="subtle" size="sm" onClick={handleCopyClick}>
           <IoCopy className="mr-2 h-4 w-4" /> Copy to clipboard
