@@ -39,10 +39,10 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onSubmitPrompt}
-          className="hidden md:block text-emerald-500 text-sm font-semibold py-2 px-2 rounded-full hover:scale-105 
+          className="hidden md:block text-emerald-500 text-sm font-semibold py-2 px-4 rounded-full hover:scale-105 
       bg-sky-900 transistion cursor-pointer"
         >
-          Submit Your Prompt
+          Submit Your Prompt 👆
         </div>
         <div
           onClick={toggleOpen}
@@ -63,25 +63,30 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
             {currentUser ? (
               <>
                 <MenuItem
+                  user
                   onClick={() => router.push("/favorites")}
-                  label="My favorites"
+                  label={"" + currentUser.name}
+                />
+                <MenuItem
+                  onClick={() => router.push("/favorites")}
+                  label="My favorites ❤️"
                 />
                 <MenuItem
                   onClick={() => router.push("/userprompts")}
-                  label="My Prompts"
+                  label="My Prompts 🗒️"
                 />
                 <MenuItem
                   submit
                   onClick={submitPromptModal.onOpen}
-                  label="Submit your prompt"
+                  label="Submit your prompt 👆"
                 />
-                <hr />
-                <MenuItem onClick={() => signOut()} label="Logout" />
+
+                <MenuItem onClick={() => signOut()} label="Logout 😦" />
               </>
             ) : (
               <>
-                <MenuItem onClick={loginModal.onOpen} label="Login" />
-                <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
+                <MenuItem onClick={loginModal.onOpen} label="Login 🏠" />
+                <MenuItem onClick={registerModal.onOpen} label="Sign Up 👋" />
               </>
             )}
           </div>
