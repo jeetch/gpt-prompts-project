@@ -69,7 +69,7 @@ const SubmitPromptModal: FC = ({}) => {
       .post("/api/posts", data)
       .then(() => {
         toast.success("Prompt submitted successfully!", {
-          position: "top-center",
+          position: "bottom-center",
           style: {
             borderRadius: "10px",
             background: "#21374a",
@@ -83,7 +83,7 @@ const SubmitPromptModal: FC = ({}) => {
       })
       .catch(() => {
         toast.success("Something went wrong ", {
-          position: "top-center",
+          position: "bottom-center",
           style: {
             borderRadius: "10px",
             background: "#21374a",

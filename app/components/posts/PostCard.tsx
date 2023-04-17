@@ -40,7 +40,7 @@ const PostCard: FC<PostCardProps> = ({
     setCopied(true);
 
     toast("Prompt copied to clipboard!", {
-      position: "top-center",
+      position: "bottom-center",
       icon: "👍",
       style: {
         borderRadius: "10px",
@@ -55,7 +55,7 @@ const PostCard: FC<PostCardProps> = ({
     setCopied(true);
 
     toast("Prompt copied to clipboard! Navigating to ChatGPT", {
-      position: "top-center",
+      position: "bottom-center",
       icon: "👍",
       style: {
         borderRadius: "10px",
@@ -141,6 +141,7 @@ const PostCard: FC<PostCardProps> = ({
       > */}
       <ShowMoreText
         lines={3}
+        onClick={() => router.push(`/posts/${data.id}`)}
         more="Show more"
         less="Show less"
         className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border

@@ -28,7 +28,7 @@ const UserPromptsClient: FC<UserPromptsClientProps> = ({
         .delete(`/api/posts/${id}`)
         .then(() => {
           toast.success("Prompt deleted!", {
-            position: "top-center",
+            position: "bottom-center",
             style: {
               borderRadius: "10px",
               background: "#21374a",

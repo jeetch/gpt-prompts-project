@@ -47,7 +47,7 @@ const useFavorite = ({ postId, currentUser }: IUseFavorite) => {
 
       {(hasFavorited) ? 
       toast("💔 Prompt un-favorited", {
-        position: "top-center",
+        position: "bottom-center",
         style: {
           borderRadius: "10px",
           background: "#21374a",
@@ -56,7 +56,7 @@ const useFavorite = ({ postId, currentUser }: IUseFavorite) => {
       })
        : 
       toast("❤️ Prompt favorited!", {
-        position: "top-center",
+        position: "bottom-center",
         style: {
           borderRadius: "10px",
           background: "#21374a",
@@ -67,7 +67,7 @@ const useFavorite = ({ postId, currentUser }: IUseFavorite) => {
       
     } catch (error) {
       toast("😓 Something went wrong", {
-        position: "top-center",
+        position: "bottom-center",
         style: {
           borderRadius: "10px",
           background: "#21374a",
