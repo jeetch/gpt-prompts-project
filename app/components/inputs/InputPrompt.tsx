@@ -27,8 +27,8 @@ const InputPrompt: FC<InputProps> = ({
     <div className="w-full relative ">
       <p className="text-sm text-neutral-400 mb-2">
         {" "}
-        Enter prompt parameters for user inputs in [ ], eg. "[Enter language
-        here]"
+        Enter prompt parameters for user inputs in [ ], eg. &quot;[Enter
+        language here]&quot;
       </p>
       <textarea
         id={id}
