@@ -116,7 +116,7 @@ const PostCard: FC<PostCardProps> = ({
   }, [data.category, params, router]);
 
   return (
-    <div className="relative flex flex-col col-span-1 gap-y-2  group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4">
+    <div className="h-fit flex flex-col col-span-1 gap-y-2  group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4">
       <div className="absolute top-2 right-2">
         <HeartButton postId={data.id} currentUser={currentUser} />
       </div>
@@ -143,8 +143,8 @@ const PostCard: FC<PostCardProps> = ({
         lines={3}
         more="Show more"
         less="Show less"
-        className="select-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
-        border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md h-auto focus:outline-none focus:ring focus:ring-emerald-600"
+        className="select-text cursor-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
+        border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600"
         anchorClass="show-more-less-clickable"
         expanded={false}
         width={280}
