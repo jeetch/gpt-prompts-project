@@ -24,7 +24,7 @@ const PostClient: FC<PostClientProps> = ({ post, currentUser }) => {
 
   return (
     <Container>
-      <div className="h-fit border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4 max-w-screen-lg mx-auto m-8">
+      <div className="h-auto border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4 max-w-screen-lg mx-auto m-8">
         <PostHead
           title={post.title}
           user={post.user}
