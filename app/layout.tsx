@@ -1,6 +1,7 @@
 import { Nunito } from "next/font/google";
 
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
@@ -43,6 +44,7 @@ export default async function RootLayout({
           </div>
         </ClientOnly>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
