@@ -5,6 +5,7 @@ interface MenuItemProps {
   label: string;
   submit?: boolean;
   user?: boolean;
+  logout?: boolean;
 }
 
 const MenuItem: FC<MenuItemProps> = ({
@@ -12,6 +13,7 @@ const MenuItem: FC<MenuItemProps> = ({
   label,
   submit = false,
   user = false,
+  logout = false,
 }) => {
   let bodycontent = (
     <div
@@ -26,8 +28,21 @@ const MenuItem: FC<MenuItemProps> = ({
 
   if (user) {
     bodycontent = (
-      <div className="px-4 py-3 transition  text-neutral-200 border-b-emerald-500 cursor-default">
+      <div className="px-4 py-3 transition  text-neutral-300  border-b-emerald-500 cursor-default">
         Welcome, {label} 👋
+      </div>
+    );
+  }
+
+  if (logout) {
+    bodycontent = (
+      <div
+        onClick={onClick}
+        className={`px-4 py-3 hover:bg-red-900/20  transition  ${
+          submit ? "text-red-800" : "text-red-600"
+        }`}
+      >
+        {label}
       </div>
     );
   }

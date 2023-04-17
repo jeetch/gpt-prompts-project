@@ -81,7 +81,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
                   label="Submit your prompt 👆"
                 />
 
-                <MenuItem onClick={() => signOut()} label="Logout 😦" />
+                <MenuItem logout onClick={() => signOut()} label="Logout 😦" />
               </>
             ) : (
               <>
