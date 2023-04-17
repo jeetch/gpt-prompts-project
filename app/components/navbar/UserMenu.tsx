@@ -58,7 +58,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onSubmitPrompt}
-          className="hidden md:block text-emerald-500 text-sm font-semibold py-2 px-4 rounded-full hover:scale-105 
+          className="hidden sm:block text-emerald-500 text-sm font-semibold py-2 px-4 rounded-full hover:scale-105 
       bg-sky-900 transistion cursor-pointer"
         >
           Submit Your Prompt 👆
