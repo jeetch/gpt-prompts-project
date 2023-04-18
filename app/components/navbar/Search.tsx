@@ -22,6 +22,11 @@ const Search: FC<SearchProps> = ({}) => {
       searchModal.onOpen();
       event.stopPropagation();
     }
+    if (event.key === "Escape") {
+      event.preventDefault();
+      searchModal.onClose();
+      event.stopPropagation();
+    }
   };
 
   useEffect(() => {

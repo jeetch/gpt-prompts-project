@@ -10,6 +10,7 @@ import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
 import { useRouter } from "next/navigation";
 import useSubmitPromptModal from "@/app/hooks/useSubmitPostModal";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -20,6 +21,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginrModal();
   const submitPromptModal = useSubmitPromptModal();
+  const searchModal = useSearchModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,14 +39,18 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
 
   const userMenuRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (
-      userMenuRef.current &&
-      !userMenuRef.current.contains(event.target as Node)
-    ) {
-      setIsOpen(false);
-    }
-  }, []);
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (
+        userMenuRef.current &&
+        !userMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        searchModal.onClose();
+      }
+    },
+    [searchModal]
+  );
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);

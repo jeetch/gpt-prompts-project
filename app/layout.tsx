@@ -12,6 +12,7 @@ import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import SearchModal from "./components/modals/SearchModal";
 import Footer from "./components/Footer";
+import SearchHeader from "./components/SearchHeader";
 
 export const metadata = {
   title: "GPT Prompts Project",
@@ -40,6 +41,7 @@ export default async function RootLayout({
           <SearchModal />
           <div className="bg-sky-950">
             <Navbar currentUser={currentUser} />
+            <SearchHeader />
             <div>{children}</div>
           </div>
         </ClientOnly>

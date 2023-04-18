@@ -17,7 +17,7 @@ interface ModalProps {
   secondaryActionLabel?: string;
 }
 
-const Modal: FC<ModalProps> = ({
+const SearchModalContainer: FC<ModalProps> = ({
   isOpen,
   onClose,
   onSubmit,
@@ -65,7 +65,7 @@ const Modal: FC<ModalProps> = ({
   return (
     <>
       <div
-        className="backdrop-blur-sm bg-sky-900/10  justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 
+        className="  backdrop-blur-sm bg-sky-900/10 justify-center bg-blur items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 
     outline-none focus:outline-none"
       >
         <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-auto lg:h-auto md:h-auto">
@@ -81,40 +81,16 @@ const Modal: FC<ModalProps> = ({
             flex flex-col w-full bg-sky-800 outline-none focus:outline-none"
             >
               {/* HEADER */}
-              <div className="flex items-center p-6 rounded-t justify-center relative border-b-[1x]">
-                <button
-                  onClick={handleClose}
-                  className="p-1 border-0 hover:opacity-70 transition absolute left-9 text-neutral-500"
-                >
-                  <IoMdClose size={18} />
-                </button>
-                <div className="text-lg font-semibold text-emerald-400">
-                  {title}
-                </div>
-              </div>
+
+              <button
+                onClick={handleClose}
+                className="z-10 p-1 border-0 hover:opacity-70 transition absolute right-1 text-neutral-500"
+              >
+                <IoMdClose size={18} />
+              </button>
 
               {/* BODY */}
-              <div className="relative p-6 flex-auto">{body}</div>
-
-              {/* FOOTER */}
-              <div className="flex flex-col gap-2 p-6">
-                <div className="flex flex-row items-center gap-4 w-full">
-                  {secondaryAction && secondaryActionLabel && (
-                    <Button
-                      outline
-                      disabled={disabled}
-                      label={secondaryActionLabel}
-                      onClick={handleSecondaryAction}
-                    />
-                  )}
-                  <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                    onClick={handleSubmit}
-                  />
-                </div>
-                {footer}
-              </div>
+              <div className="relative p-4 flex-auto">{body}</div>
             </div>
           </div>
         </div>
@@ -123,4 +99,4 @@ const Modal: FC<ModalProps> = ({
   );
 };
 
-export default Modal;
+export default SearchModalContainer;

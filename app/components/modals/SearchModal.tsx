@@ -5,6 +5,8 @@ import Modal from "./Modal";
 import { useRouter, useSearchParams } from "next/navigation"; // Corrected import
 import qs from "query-string";
 import Heading from "../Heading";
+import SearchModalContainer from "./SearchModalContainer";
+import { BiSearch } from "react-icons/bi";
 
 interface SearchModalProps {}
 
@@ -48,13 +50,8 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
-      <Heading
-        title="What are you looking for?"
-        subtitle="Find the perfect prompt"
-      />
-
       <form onSubmit={onSubmit} className="">
-        <div className="flex flex-col items-center justify-center gap-1 p-1 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4">
+        <div className="relative flex flex-col items-center justify-center gap-1 p-1 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4">
           <input
             ref={inputRef} // Added ref to input
             type="text"
@@ -64,7 +61,7 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
               onSubmit;
             }}
             className="
-            p-4 rounded-xl
+            p-5 rounded-xl
       w-full
       bg-gray-800
       text-white
@@ -76,13 +73,16 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
     "
             placeholder="Search"
           />
+          <button className="absolute right-3 md:right-4 p-2  bg-emerald-500 rounded-full text-white">
+            <BiSearch size={18} />
+          </button>
         </div>
       </form>
     </div>
   );
 
   return (
-    <Modal
+    <SearchModalContainer
       isOpen={searchModal.isOpen}
       onClose={searchModal.onClose}
       onSubmit={onSubmit}

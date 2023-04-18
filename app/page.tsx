@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import PostCard from "./components/posts/PostCard";
 import ClientOnly from "./components/ClientOnly";
+import SearchHeader from "./components/SearchHeader";
 
 interface HomeProps {
   searchParams: IPostParams;
