@@ -1,25 +1,36 @@
 import prisma from "@/app/libs/prismadb";
 
-export interface IListingsParams {
+export interface IPostParams {
   userId?: string;
   category?: string;
+  search?: string; // Add search parameter
 }
 
 export default async function getPosts(
-  params: IListingsParams
+  params: IPostParams
 ) {
   try {
     const {
       userId,
       category,
+      search, 
     } = params;
 
     let query: any = {
-        userId,
-        category,
-      };
+      userId,
+      category,
+    };
 
-    
+    if (search) {
+      query = {
+        ...query,
+        OR: [
+          { category: { contains: search, mode: "insensitive" } },
+          { title: { contains: search, mode: "insensitive" } },
+          { prompt: { contains: search, mode: "insensitive" } },
+        ],
+      };
+    }
 
     const posts = await prisma.post.findMany({
       where: query,
@@ -27,10 +38,9 @@ export default async function getPosts(
         createdAt: 'desc'
       },
       include: {
-          user: true
+        user: true
       }
     });
-
     const safePosts = posts.map((post) => ({
       ...post,
       createdAt: post.createdAt.toISOString(),

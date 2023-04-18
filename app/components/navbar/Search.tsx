@@ -1,20 +1,20 @@
 "use client";
 import useSearchModal from "@/app/hooks/useSearchModal";
 import { differenceInDays } from "date-fns";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FC, useEffect, useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
+import { BsX } from "react-icons/bs";
 
 interface SearchProps {}
 
 const Search: FC<SearchProps> = ({}) => {
   const searchModal = useSearchModal();
   const params = useSearchParams();
+  const router = useRouter();
 
-  const locationValue = params?.get("locationValue");
-  const startDate = params?.get("startDate");
-  const endDate = params?.get("endDate");
-  const guestCount = params?.get("guestCount");
+  // Use qs.parse to get query parameters
+  const searchQuery = params?.get("search");
 
   const keyDownHandler = (event: KeyboardEvent) => {
     if (event.ctrlKey && event.key === "k") {
@@ -27,6 +27,10 @@ const Search: FC<SearchProps> = ({}) => {
   useEffect(() => {
     window.addEventListener("keydown", keyDownHandler);
   });
+
+  const handleClearSearch = () => {
+    router.push("/");
+  };
 
   return (
     <div
@@ -45,15 +49,37 @@ const Search: FC<SearchProps> = ({}) => {
     hover:border-emerald-700
     transition
     cursor-pointer
+    relative
     "
     >
-      <div className="pr-1 flex flex-row items-center justify-between">
-        <div className="hidden md:block text-sm hover:font-semibold px-6">
-          Look for your prompts
+      <div className="pr-1 p  flex flex-row items-center justify-between">
+        <div
+          className={`hidden md:block text-sm hover:font-semibold ${
+            searchQuery ? "px-8" : "px-6"
+          }`}
+        >
+          {searchQuery ? searchQuery : "Look for your prompts"}
+          {/* Conditionally render search query */}
         </div>
-        <div className="block md:hidden text-sm font-semibold px-6">
-          Search prompts
+        <div
+          className={`block md:hidden text-sm hover:font-semibold ${
+            searchQuery ? "px-8" : "px-6"
+          }`}
+        >
+          {searchQuery ? searchQuery : "Search prompts"}
         </div>
+
+        {searchQuery && (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClearSearch();
+            }}
+            className="absolute p-2 rounded-full text-white cursor-pointer"
+          >
+            <BsX size={18} />
+          </div>
+        )}
 
         <div className="flex">
           <div className="hidden lg:flex items-center space-x-1 text-xs text-gray-400 scale-75">
