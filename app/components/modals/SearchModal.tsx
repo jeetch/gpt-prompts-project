@@ -73,7 +73,12 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
     "
             placeholder="Search"
           />
-          <button className="absolute right-3 md:right-4 p-2  bg-emerald-500 rounded-full text-white">
+          <button
+            onClick={(e) => {
+              onSubmit;
+            }}
+            className="absolute right-3 md:right-4 p-2  bg-emerald-500 rounded-full text-white"
+          >
             <BiSearch size={18} />
           </button>
         </div>

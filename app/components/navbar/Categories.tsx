@@ -10,6 +10,11 @@ interface CategoriesProps {}
 
 export const categories = [
   {
+    label: "Fun",
+    icon: "🎉",
+    description: "This property is has windmills!",
+  },
+  {
     label: "Education & Tutoring",
     icon: "🎓",
     description: "This property is has windmills!",
