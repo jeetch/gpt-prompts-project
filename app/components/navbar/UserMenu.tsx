@@ -63,14 +63,14 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onSubmitPrompt}
-          className="hidden sm:block text-emerald-500 text-sm font-semibold py-2 px-4 rounded-full hover:scale-105 
+          className="hidden sm:block  text-emerald-500 text-sm font-semibold py-2 px-4 rounded-full hover:scale-105 
       bg-sky-900 transistion cursor-pointer"
         >
           Submit Your Prompt 👆
         </div>
         <div
           onClick={toggleOpen}
-          className="p-2 md:py-1 md:px-2 border-[1px] border-slate-600 flex flex-row items-center gap-3 rounded-full
+          className="p-2 md:py-1 md:px-2  flex flex-row items-center gap-3 rounded-full
           cursor-pointer hover:shadow-md hover:scale-105 transistion"
         >
           <AiOutlineMenu />

@@ -33,20 +33,20 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body
+        className={`relative ${font.className} bg-gradient-to-b from-sky-950 to-sky-900`}
+      >
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal />
           <SubmitPromptModal />
           <LoginModal />
           <SearchModal />
-          <div className="bg-gradient-to-t from-sky-900 to-sky-950">
-            <Navbar currentUser={currentUser} />
-            <SearchHeader />
+          <Navbar currentUser={currentUser} />
+          <SearchHeader />
 
-            <Banner currentUser={currentUser} />
-            <div>{children}</div>
-          </div>
+          <Banner currentUser={currentUser} />
+          <div>{children}</div>
         </ClientOnly>
         <Footer />
         <Analytics />
