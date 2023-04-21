@@ -6,7 +6,7 @@ import Search from "./Search";
 import UserMenu from "./UserMenu";
 import { SafeUser } from "@/app/types";
 import Categories from "./Categories";
-import useSearchModal from "@/app/hooks/useSearchModal";
+import Banner from "../Banner";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -19,7 +19,6 @@ const Navbar: FC<NavbarProps> = ({ currentUser }) => {
         className="
         w-full bg-sky-950 z-10 shadow-sm
             py-4
-            border-b-[1px]
             border-emerald-500
             text-slate-200
             sticky top-0 

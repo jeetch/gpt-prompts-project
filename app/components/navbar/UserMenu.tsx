@@ -46,7 +46,6 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
         !userMenuRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
-        searchModal.onClose();
       }
     },
     [searchModal]

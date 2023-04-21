@@ -46,7 +46,7 @@ const CatergoryBox: FC<CatergoryBoxProps> = ({ label, icon, selected }) => {
     <div
       onClick={handleClick}
       className={`flex flex-col items-center justify-center 
-      gap-1 p-1 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4
+      gap-1 p-1 px-2 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4
       border bg-sky-900 rounded-full
       hover:text-emerald-300 hover:scale-95 transition cursor-pointer
       ${selected ? "border-emerald-900" : "border-transparent"}

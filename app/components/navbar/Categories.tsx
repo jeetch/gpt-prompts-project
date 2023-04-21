@@ -61,7 +61,7 @@ const Categories: FC<CategoriesProps> = ({}) => {
       <div className="flex flex-wrap justify-center p-5 items-center  gap-2 ">
         <div
           onClick={() => router.push("/")}
-          className={`text-xs p-1 sm:text-sm sm:p-2 sm:gap-2  md:gap-4
+          className={`text-xs sm:text-sm p-1 px-2 sm:p-2 sm:gap-2  md:gap-4
       border bg-sky-900 rounded-full text-neutral-200
       hover:text-emerald-300 hover:scale-95 transition cursor-pointer border-transparent`}
         >

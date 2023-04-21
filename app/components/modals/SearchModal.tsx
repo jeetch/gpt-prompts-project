@@ -10,18 +10,36 @@ import { BiSearch } from "react-icons/bi";
 
 interface SearchModalProps {}
 
+export const topsearches = [
+  {
+    description: "This property is has windmills!",
+  },
+  {
+    description: "This property is has windmills!",
+  },
+  {
+    description: "This property is modern!",
+  },
+  {
+    description: "This property is in the countryside!",
+  },
+  {
+    description: "This is property has a beautiful pool!",
+  },
+  {
+    description: "This property is on an island!",
+  },
+  {
+    description: "This property is near a lake!",
+  },
+];
+
 const SearchModal: FC<SearchModalProps> = ({}) => {
   const router = useRouter();
   const params = useSearchParams(); // Updated to use router.query
   const searchModal = useSearchModal();
   const [searchQuery, setSearchQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null); // Added useRef for input
-
-  useEffect(() => {
-    if (searchModal.isOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [searchModal.isOpen]);
 
   const onSubmit = useCallback(async () => {
     let currentQuery = {};
@@ -49,7 +67,7 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
   }, [searchModal, router, params, searchQuery]);
 
   let bodyContent = (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-2">
       <form onSubmit={onSubmit} className="">
         <div className="relative flex flex-col items-center justify-center gap-1 p-1 text-xs sm:text-sm sm:p-2 sm:gap-2 md:gap-4">
           <input
@@ -83,6 +101,21 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
           </button>
         </div>
       </form>
+      <div className="text-sm text-bold mt-2 text-center text-slate-300">
+        Top Searches
+      </div>
+      <div className="flex flex-wrap justify-center p-4 items-center  gap-2 ">
+        {topsearches.map((item) => (
+          <div
+            onClick={() => setSearchQuery(item.description)}
+            className={`text-xs p-1 px-2 sm:p-2 sm:gap-2  md:gap-4
+      border bg-sky-900 rounded-full text-neutral-200
+      hover:text-emerald-300 cursor-pointer border-transparent`}
+          >
+            {item.description}
+          </div>
+        ))}
+      </div>
     </div>
   );
 

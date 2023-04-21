@@ -1,4 +1,4 @@
-import { Nunito } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -13,13 +13,14 @@ import getCurrentUser from "./actions/getCurrentUser";
 import SearchModal from "./components/modals/SearchModal";
 import Footer from "./components/Footer";
 import SearchHeader from "./components/SearchHeader";
+import Banner from "./components/Banner";
 
 export const metadata = {
   title: "GPT Prompts Project",
   description: "Home renting website",
 };
 
-const font = Nunito({
+const font = Inter({
   subsets: ["latin"],
 });
 
@@ -42,6 +43,8 @@ export default async function RootLayout({
           <div className="bg-sky-950">
             <Navbar currentUser={currentUser} />
             <SearchHeader />
+
+            <Banner />
             <div>{children}</div>
           </div>
         </ClientOnly>

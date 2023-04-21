@@ -11,15 +11,17 @@ const SearchHeader: FC<SearchHeaderProps> = ({}) => {
   const searchQuery = params?.get("search");
 
   return (
-    <div
-      className={`text-center pb-2 text-sm text-neutral-400 ${
-        searchQuery ? "block" : "hidden"
-      }`}
-    >
-      {searchQuery
-        ? "You searched for : " + searchQuery
-        : "Look for your prompts"}
-    </div>
+    <>
+      <div
+        className={`text-center pb-2 text-sm text-neutral-400 ${
+          searchQuery ? "block" : "hidden"
+        }`}
+      >
+        {searchQuery
+          ? "You searched for : " + searchQuery
+          : "Look for your prompts"}
+      </div>
+    </>
   );
 };
 
