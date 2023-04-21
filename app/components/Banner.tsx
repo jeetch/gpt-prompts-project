@@ -2,8 +2,13 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { FC } from "react";
+import { SafeUser } from "../types";
 
-const Banner: FC = ({}) => {
+interface BannerProps {
+  currentUser?: SafeUser | null;
+}
+
+const Banner: FC<BannerProps> = ({ currentUser }) => {
   const params = useSearchParams();
   const router = useRouter();
   const searchQuery = params?.get("search");
@@ -13,7 +18,7 @@ const Banner: FC = ({}) => {
     <>
       <div
         className={`text-center px-6 py-2 ${
-          searchQuery || category ? "hidden" : "block"
+          searchQuery || category || currentUser ? "hidden" : "block"
         }`}
       >
         <h2 className="text-2xl sm:text-3xl   pt-8 text-white font-bold ">

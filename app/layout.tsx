@@ -17,7 +17,7 @@ import Banner from "./components/Banner";
 
 export const metadata = {
   title: "GPT Prompts Project",
-  description: "Home renting website",
+  description: "Open GPT Prompts Library",
 };
 
 const font = Inter({
@@ -44,7 +44,7 @@ export default async function RootLayout({
             <Navbar currentUser={currentUser} />
             <SearchHeader />
 
-            <Banner />
+            <Banner currentUser={currentUser} />
             <div>{children}</div>
           </div>
         </ClientOnly>

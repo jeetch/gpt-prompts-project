@@ -107,6 +107,7 @@ const SearchModal: FC<SearchModalProps> = ({}) => {
       <div className="flex flex-wrap justify-center p-4 items-center  gap-2 ">
         {topsearches.map((item) => (
           <div
+            key={item.description}
             onClick={() => setSearchQuery(item.description)}
             className={`text-xs p-1 px-2 sm:p-2 sm:gap-2  md:gap-4
       border bg-sky-900 rounded-full text-neutral-200
