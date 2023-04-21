@@ -3145,11 +3145,6 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react-key-icons@^1.0.1":
-  "integrity" "sha512-/eGczfWsvZJ5FhBrYIt3zf+dYShLgLZ/Y4gvsFmoDH5AQiRKofjOuQotbnrEwsMwVE7E1oBDKL6pAo+QeIbG2A=="
-  "resolved" "https://registry.npmjs.org/react-key-icons/-/react-key-icons-1.0.1.tgz"
-  "version" "1.0.1"
-
 "react-leaflet@^4.2.1":
   "integrity" "sha512-p9chkvhcKrWn/H/1FFeVSqLdReGwn2qmiobOQGO3BifX+/vV/39qhY8dGqbdcPh1e6jxh/QHriLXr7a4eLFK4Q=="
   "resolved" "https://registry.npmjs.org/react-leaflet/-/react-leaflet-4.2.1.tgz"
@@ -3892,11 +3887,6 @@
   "integrity" "sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ=="
   "resolved" "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.3.tgz"
   "version" "1.2.3"
-
-"world-countries@^4.0.0":
-  "integrity" "sha512-LsFFYmggquj0U+i7VUaJOZYz5F4QNu+oceGw8odnyVHMT2LxYSdVncqdouOEnq1esr7yCakp9+3BZTztuSw1Pg=="
-  "resolved" "https://registry.npmjs.org/world-countries/-/world-countries-4.0.0.tgz"
-  "version" "4.0.0"
 
 "wrappy@1":
   "integrity" "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
