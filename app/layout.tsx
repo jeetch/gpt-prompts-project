@@ -40,7 +40,7 @@ export default async function RootLayout({
           <SubmitPromptModal />
           <LoginModal />
           <SearchModal />
-          <div className="bg-sky-950">
+          <div className="bg-gradient-to-t from-sky-900 to-sky-950">
             <Navbar currentUser={currentUser} />
             <SearchHeader />
 
