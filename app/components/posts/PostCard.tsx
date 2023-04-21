@@ -148,7 +148,7 @@ const PostCard: FC<PostCardProps> = ({
         lines={3}
         more="Show more"
         less="Show less"
-        className="select-text cursor-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono  w-full bg-sky-900 border
+        className="select-text cursor-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono  w-full bg-slate-800 border
         border-none text-slate-400 p-2 rounded-md hover:border-emerald-700 hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600"
         anchorClass="show-more-less-clickable"
         expanded={false}
