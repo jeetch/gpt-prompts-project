@@ -36,6 +36,18 @@ export async function POST(
     }
   });
 
+  // Increment favorites count in Post model
+  await prisma.post.update({
+    where: {
+      id: postId,
+    },
+    data: {
+      favorites: {
+        increment: 1,
+      },
+    },
+  });
+
   return NextResponse.json(user);
 }
 
@@ -66,6 +78,18 @@ export async function DELETE(
     data: {
       favoriteIds
     }
+  });
+
+  // Decrement favorites count in Post model
+  await prisma.post.update({
+    where: {
+      id: postId,
+    },
+    data: {
+      favorites: {
+        decrement: 1,
+      },
+    },
   });
 
   return NextResponse.json(user);

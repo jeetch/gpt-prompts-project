@@ -15,13 +15,13 @@ export const categories = [
     description: "This property is has windmills!",
   },
   {
-    label: "Education & Tutoring",
+    label: "Education and Tutoring",
     icon: "🎓",
     description: "This property is has windmills!",
   },
   {
-    label: "Health and Wellness",
-    icon: "💪",
+    label: "Writing",
+    icon: "",
     description: "This property is modern!",
   },
   {

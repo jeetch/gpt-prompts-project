@@ -35,7 +35,7 @@ export default async function getPosts(
     const posts = await prisma.post.findMany({
       where: query,
       orderBy: {
-        createdAt: 'desc'
+        favorites: 'desc'
       },
       include: {
         user: true

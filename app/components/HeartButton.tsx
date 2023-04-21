@@ -3,13 +3,19 @@ import { FC } from "react";
 import { SafeUser } from "../types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import useFavorite from "../hooks/useFavorite";
+import getPostFavoritesCount from "../actions/getPostFavoritesCount";
 
 interface HeartButtonProps {
   postId: string;
   currentUser?: SafeUser | null;
+  favorites?: number;
 }
 
-const HeartButton: FC<HeartButtonProps> = ({ postId, currentUser }) => {
+const HeartButton: FC<HeartButtonProps> = ({
+  postId,
+  currentUser,
+  favorites,
+}) => {
   const { hasFavorited, toggleFavorite } = useFavorite({
     postId,
     currentUser,
@@ -25,15 +31,20 @@ const HeartButton: FC<HeartButtonProps> = ({ postId, currentUser }) => {
   cursor-pointer
   "
     >
-      <AiOutlineHeart
-        size={28}
-        className="fill-neutral-200/70 absolute -top-[2px] -right-[2px]"
-      />
+      <div>
+        <AiOutlineHeart
+          size={28}
+          className="fill-neutral-200/70 absolute -top-[2px] -right-[2px]"
+        />
 
-      <AiFillHeart
-        size={24}
-        className={hasFavorited ? "fill-red-600/50" : "fill-transparent"}
-      />
+        <AiFillHeart
+          size={24}
+          className={hasFavorited ? "fill-red-600/50" : "fill-transparent"}
+        />
+      </div>
+      <div className="text-neutral-200/70 text-xs absolute top-[25px] right-[8px]">
+        {favorites}
+      </div>
     </div>
   );
 };
