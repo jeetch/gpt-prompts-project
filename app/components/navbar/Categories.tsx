@@ -12,7 +12,7 @@ export const categories = [
   {
     label: "Fun",
     icon: "🎉",
-    description: "This property is has windmills!",
+    description: "These are fun prompts to spend hours with ChatGPT",
   },
   {
     label: "Education and Tutoring",
