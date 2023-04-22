@@ -53,6 +53,7 @@ model Post {
   category  String
   userId    String   @db.ObjectId
   favorites Int      @default(1)
+  source    String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

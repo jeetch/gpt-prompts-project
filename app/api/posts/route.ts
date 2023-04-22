@@ -16,7 +16,8 @@ export async function POST(
   const { 
     title,
     prompt,
-    category
+    category,
+    source
    } = body;
 
   Object.keys(body).forEach((value: any) => {
@@ -30,6 +31,7 @@ export async function POST(
       title,
       prompt,
       category,
+      source,
       userId: currentUser.id
     }
   });

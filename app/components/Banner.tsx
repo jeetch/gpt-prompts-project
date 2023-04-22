@@ -30,8 +30,8 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
             Transform your ChatGPT experience with our prompts 🚀
           </h2>{" "}
           <p className="text-slate-400 text-sm mt-2 mb-12 ">
-            We are a open repository of GPT prompts, start by expoloring the
-            categories or searching for prompts
+            Unlock our open library of GPT Prompts with new prompts being added
+            everyday.
           </p>
         </div>
       </div>

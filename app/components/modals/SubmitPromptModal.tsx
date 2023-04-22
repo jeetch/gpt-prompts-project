@@ -37,6 +37,7 @@ const SubmitPromptModal: FC = ({}) => {
       category: "",
       title: "",
       prompt: "",
+      source: "",
     },
   });
 
@@ -154,6 +155,15 @@ const SubmitPromptModal: FC = ({}) => {
           register={register}
           errors={errors}
           required
+        />
+
+        <Input
+          id="source"
+          type="url"
+          label="Source URL (optional)"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
         />
       </div>
     );

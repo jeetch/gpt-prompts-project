@@ -13,6 +13,7 @@ import { categories } from "../navbar/Categories";
 import qs from "query-string";
 import ShowMoreText from "react-show-more-text";
 import { AiFillEdit } from "react-icons/ai";
+import Link from "next/link";
 
 interface PostCardProps {
   data: SafePost & {
@@ -176,8 +177,20 @@ const PostCard: FC<PostCardProps> = ({
         </ButtonUi>
       </div>
 
-      <div className="text-xs font-light flex flex-row items-center gap-2 text-neutral-400">
+      <div className="text-xs font-light flex flex-row justify-start  items-center gap-2 text-slate-400">
         <div> Contributed by {data.user?.name} </div>
+        {data.source ? (
+          <Link
+            href={data.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-2"
+          >
+            source
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
       {onAction && actionLabel && (
         <Button

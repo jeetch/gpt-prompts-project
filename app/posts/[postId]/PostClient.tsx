@@ -8,6 +8,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafePost, SafeUser } from "@/app/types";
 import { useRouter } from "next/navigation";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { IoChevronBack } from "react-icons/io5";
 
 interface PostClientProps {
   post: SafePost;
@@ -24,6 +25,14 @@ const PostClient: FC<PostClientProps> = ({ post, currentUser }) => {
 
   return (
     <Container>
+      <button
+        type="button"
+        onClick={() => router.back()}
+        className="mt-4 flex items-center text-slate-400 text-sm hover:text-emerald-500"
+      >
+        <IoChevronBack />
+        Back
+      </button>
       <div className="h-auto border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4 max-w-screen-lg mx-auto m-8">
         <PostHead
           favorites={post.favorites}

@@ -33,9 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`relative ${font.className} bg-gradient-to-b from-sky-950 to-sky-900`}
-      >
+      <body className={`relative ${font.className}  bg-sky-950 `}>
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal />
