@@ -27,7 +27,7 @@ const PostHead: FC<PostHeadProps> = ({
       h-auto overflow-hidden rounded-xl relative pr-12"
       >
         <Heading title={title} />
-        <div className="text-neutral-400 text-xl font-semibold flex flex-row items-center gap-2">
+        <div className="text-slate-400 text-md font-semibold flex flex-row items-center gap-2">
           <div> Contributed by {user?.name} </div>
         </div>
         <div className="absolute top-2 right-2">

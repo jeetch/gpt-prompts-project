@@ -22,6 +22,13 @@ export const categories = [
       "Explore prompts related to literature, writing techniques, and author insights with ChatGPT",
   },
   {
+    label: "Education and Research",
+    icon: "📝",
+    description:
+      "Explore prompts related to literature, writing techniques, and author insights with ChatGPT",
+  },
+
+  {
     label: "Conversation and Language",
     icon: "💬",
     description:
