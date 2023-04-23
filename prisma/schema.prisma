@@ -52,7 +52,7 @@ model Post {
   createdAt   DateTime @default(now())
   category    String
   userId      String   @db.ObjectId
-  favorites   Int      @default(1)
+  favorites   Int      @default(0)
   source      String?
   description String?
 
