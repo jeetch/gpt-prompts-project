@@ -151,7 +151,7 @@ const SubmitPromptModal: FC = ({}) => {
           required
         />
 
-        <Input
+        <InputPrompt
           id="description"
           label="Description"
           disabled={isLoading}
@@ -172,6 +172,8 @@ const SubmitPromptModal: FC = ({}) => {
           disabled={isLoading}
           register={register}
           errors={errors}
+          subtitle='Enter prompt parameters for user inputs in [ ], eg. "[Enter
+            language here]"'
           required
         />
 

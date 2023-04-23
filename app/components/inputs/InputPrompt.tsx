@@ -12,6 +12,7 @@ interface InputProps {
   required?: boolean;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
+  subtitle?: string;
 }
 
 const InputPrompt: FC<InputProps> = ({
@@ -22,6 +23,7 @@ const InputPrompt: FC<InputProps> = ({
   required,
   register,
   errors,
+  subtitle,
 }) => {
   return (
     <div className="w-full relative ">
@@ -50,11 +52,7 @@ const InputPrompt: FC<InputProps> = ({
         {" "}
         {label}{" "}
       </label>
-      <p className="text-sm text-neutral-400 mt-2">
-        {" "}
-        Enter prompt parameters for user inputs in [ ], eg. &quot;[Enter
-        language here]&quot;
-      </p>
+      <p className="text-sm text-neutral-400 mt-2">{subtitle}</p>
     </div>
   );
 };

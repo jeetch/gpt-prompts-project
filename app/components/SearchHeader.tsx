@@ -18,7 +18,7 @@ const SearchHeader: FC<SearchHeaderProps> = ({}) => {
         }`}
       >
         {searchQuery
-          ? "Here are some quesries realted to : " + searchQuery
+          ? "Here are some prompts related to : " + searchQuery
           : "Look for your prompts"}
       </div>
     </>

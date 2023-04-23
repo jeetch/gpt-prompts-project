@@ -11,6 +11,7 @@ interface PostHeadProps {
   user: SafeUser;
   id: string;
   currentUser?: SafeUser | null;
+  description?: string;
 }
 
 const PostHead: FC<PostHeadProps> = ({
@@ -19,23 +20,28 @@ const PostHead: FC<PostHeadProps> = ({
   id,
   currentUser,
   favorites,
+  description,
 }) => {
   return (
     <>
       <div
         className="w-full
-      h-auto overflow-hidden rounded-xl relative pr-12"
+      h-auto overflow-hidden rounded-xl relative pr-12 flex flex-col gap-2"
       >
         <Heading title={title} />
-        <div className="text-slate-400 text-md font-semibold flex flex-row items-center gap-2">
-          <div> Contributed by {user?.name} </div>
-        </div>
+
         <div className="absolute top-2 right-2">
           <HeartButton
             favorites={favorites}
             postId={id}
             currentUser={currentUser}
           />
+        </div>
+
+        <p className="text-slate-400 ">{description} </p>
+
+        <div className="text-slate-400 text-sm font-light flex flex-row items-center gap-2">
+          <div> Contributed by {user?.name} </div>
         </div>
       </div>
     </>

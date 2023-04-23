@@ -131,7 +131,6 @@ const PostCard: FC<PostCardProps> = ({
           currentUser={currentUser}
         />
       </div>
-
       {/* Category Label */}
       <span
         className=" text-emerald-400 text-xs  cursor-pointer  hover:font-semibold"
@@ -139,7 +138,6 @@ const PostCard: FC<PostCardProps> = ({
       >
         {getCategoryIcon(data.category)} {data.category}
       </span>
-
       {/* Title */}
       <div
         className="font-semibold text-neutral-200 text-lg cursor-pointer hover:underline hover:decoration-emerald-500 hover:underline-offset-4"
@@ -147,15 +145,14 @@ const PostCard: FC<PostCardProps> = ({
       >
         {data.title}
       </div>
-
       {/* Description */}
       <p className="text-slate-400 text-sm ">
-        {data?.description} .{" "}
-        <a className="text-slate-400 text-xs ">{n_words}</a>{" "}
+        {data?.description}{" "}
+        <a className="text-slate-400 text-xs font-light ">{n_words}</a>
       </p>
 
       {/* Prompt */}
-      <ShowMoreText
+      {/* <ShowMoreText
         lines={1}
         more="Show"
         less="Show less"
@@ -167,8 +164,7 @@ const PostCard: FC<PostCardProps> = ({
         truncatedEndingComponent={"... "}
       >
         {data.prompt}
-      </ShowMoreText>
-
+      </ShowMoreText> */}
       {/* Buttons */}
       <div className="flex flex-row justify-content items-center gap-2">
         <ButtonUi
@@ -186,7 +182,6 @@ const PostCard: FC<PostCardProps> = ({
           Copy and open ChatGPT
         </ButtonUi>
       </div>
-
       {/* Footer */}
       <div className="text-xs font-light flex flex-row justify-start  items-center gap-2 text-slate-400">
         <div> Contributed by {data.user?.name} </div>
@@ -203,7 +198,6 @@ const PostCard: FC<PostCardProps> = ({
           ""
         )}
       </div>
-
       {/* Delete Button */}
       {onAction && actionLabel && (
         <Button
