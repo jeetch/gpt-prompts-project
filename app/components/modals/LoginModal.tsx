@@ -15,6 +15,7 @@ import Button from "../Button";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import UserModal from "./UserModal";
 
 interface RegisterModalProps {}
 
@@ -70,32 +71,9 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
     registerModal.onOpen();
   }, [loginModal, registerModal]);
 
-  const bodyContent = (
-    <div className="flex flex-col gap-4">
-      <Heading title="Welcome back 👋" subtitle="Login to your account" />
-      <Input
-        id="email"
-        label="Email"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-
-      <Input
-        id="password"
-        type="password"
-        label="Password"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-    </div>
-  );
-
   const footerContent = (
-    <div className="flex flex-col gap-4 mt-3">
+    <div className="flex flex-col gap-4 mt-3 px-6 py-4">
+      <Heading title="Welcome back 👋" subtitle="Login to your account" />
       <Button
         outline
         label="Continue with Google"
@@ -123,14 +101,13 @@ const LoginModal: FC<RegisterModalProps> = ({}) => {
   );
 
   return (
-    <Modal
+    <UserModal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
       title="Login"
       actionLabel="Continue"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
-      body={bodyContent}
       footer={footerContent}
     />
   );

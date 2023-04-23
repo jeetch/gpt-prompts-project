@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import SearchHeader from "./components/SearchHeader";
 import Banner from "./components/Banner";
 import CategoryBanner from "./components/CategoryBanner";
+import { PageWrapper } from "./components/PageWrapper";
 
 export const metadata = {
   title: "GPT Prompts Project",
@@ -46,7 +47,10 @@ export default async function RootLayout({
 
           <Banner currentUser={currentUser} />
           <CategoryBanner />
-          <div>{children}</div>
+
+          <PageWrapper>
+            <div>{children}</div>
+          </PageWrapper>
         </ClientOnly>
         <Footer />
         <Analytics />

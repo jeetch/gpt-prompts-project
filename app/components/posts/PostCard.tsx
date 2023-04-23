@@ -52,6 +52,11 @@ const PostCard: FC<PostCardProps> = ({
     });
   };
 
+  const readingTime = require("reading-time");
+
+  const stats = readingTime(data.prompt);
+  const n_words = stats.words + " words";
+
   const handleGPTCopyClick = () => {
     navigator.clipboard.writeText(data.prompt);
     setCopied(true);
@@ -127,6 +132,7 @@ const PostCard: FC<PostCardProps> = ({
         />
       </div>
 
+      {/* Category Label */}
       <span
         className=" text-emerald-400 text-xs  cursor-pointer  hover:font-semibold"
         onClick={handleClick}
@@ -134,20 +140,24 @@ const PostCard: FC<PostCardProps> = ({
         {getCategoryIcon(data.category)} {data.category}
       </span>
 
+      {/* Title */}
       <div
         className="font-semibold text-neutral-200 text-lg cursor-pointer hover:underline hover:decoration-emerald-500 hover:underline-offset-4"
         onClick={() => router.push(`/posts/${data.id}`)}
       >
         {data.title}
       </div>
-      {/* <textarea
-        className="select-all scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono text-neutral-200 w-full bg-sky-900 border
-     border-emerald-900 p-2 rounded-md cursor-pointer hover:border-emerald-700 hover:shadow-md h-[200px] focus:outline-none focus:ring focus:ring-emerald-600"
-        onClick={() => {}}
-      > */}
+
+      {/* Description */}
+      <p className="text-slate-400 text-sm ">
+        {data?.description} .{" "}
+        <a className="text-slate-400 text-xs ">{n_words}</a>{" "}
+      </p>
+
+      {/* Prompt */}
       <ShowMoreText
-        lines={3}
-        more="Show more"
+        lines={1}
+        more="Show"
         less="Show less"
         className="select-text cursor-text scrollbar-thin selection:bg-emerald-600/30 scrollbar-thumb-emerald-700 scrollbar-track-sky-900 font-light text-sm font-mono  w-full bg-slate-800 border
         border-none text-slate-400 p-2 rounded-md hover:border-emerald-700 hover:shadow-md focus:outline-none focus:ring focus:ring-emerald-600"
@@ -159,7 +169,7 @@ const PostCard: FC<PostCardProps> = ({
         {data.prompt}
       </ShowMoreText>
 
-      {/* </textarea> */}
+      {/* Buttons */}
       <div className="flex flex-row justify-content items-center gap-2">
         <ButtonUi
           variant="subtle"
@@ -177,6 +187,7 @@ const PostCard: FC<PostCardProps> = ({
         </ButtonUi>
       </div>
 
+      {/* Footer */}
       <div className="text-xs font-light flex flex-row justify-start  items-center gap-2 text-slate-400">
         <div> Contributed by {data.user?.name} </div>
         {data.source ? (
@@ -192,6 +203,8 @@ const PostCard: FC<PostCardProps> = ({
           ""
         )}
       </div>
+
+      {/* Delete Button */}
       {onAction && actionLabel && (
         <Button
           disabled={disabled}

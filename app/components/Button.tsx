@@ -28,12 +28,12 @@ const Button: FC<ButtonProps> = ({
       disabled={disabled}
       className={`
   relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg 
-  transition w-full border border-none  hover:shadow-sm
+   w-full border border-none  hover:shadow-sm
   ${
     deletePrompt
       ? "bg-red-900 hover:bg-red-900/80"
       : outline
-      ? "bg-none hover:bg-sky-900 "
+      ? "bg-sky-900 hover:bg-sky-900/70 "
       : "bg-emerald-800  hover:bg-emerald-800/80"
   }
   

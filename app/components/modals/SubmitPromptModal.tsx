@@ -16,6 +16,7 @@ import useSubmitPromptModal from "@/app/hooks/useSubmitPostModal";
 enum STEPS {
   CATEGORY = 0,
   DESCRIPTION = 1,
+  PROMPT = 2,
 }
 
 const SubmitPromptModal: FC = ({}) => {
@@ -38,6 +39,7 @@ const SubmitPromptModal: FC = ({}) => {
       title: "",
       prompt: "",
       source: "",
+      description: "",
     },
   });
 
@@ -60,7 +62,7 @@ const SubmitPromptModal: FC = ({}) => {
   };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    if (step !== STEPS.DESCRIPTION) {
+    if (step !== STEPS.PROMPT) {
       return onNext();
     }
 
@@ -97,7 +99,7 @@ const SubmitPromptModal: FC = ({}) => {
       });
   };
   const actionLabel = useMemo(() => {
-    if (step == STEPS.DESCRIPTION) {
+    if (step == STEPS.PROMPT) {
       return "Create";
     }
 
@@ -148,6 +150,22 @@ const SubmitPromptModal: FC = ({}) => {
           errors={errors}
           required
         />
+
+        <Input
+          id="description"
+          label="Description"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+      </div>
+    );
+  }
+
+  if (step == STEPS.PROMPT) {
+    bodyContent = (
+      <div className=" flex flex-col gap-8">
         <InputPrompt
           id="prompt"
           label="Prompt"

@@ -3,6 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FC } from "react";
 import { SafeUser } from "../types";
+import { motion } from "framer-motion";
 
 interface BannerProps {
   currentUser?: SafeUser | null;
@@ -20,18 +21,24 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
     <>
       <div className="relative  ">
         <div
-          className={`text-center px-6 py-2 ${
+          className={`text-center px-4 sm:px-12 xl:px-64 py-2 ${
             searchQuery || category || currentUser || notIsHome
               ? "hidden"
               : "block"
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl   pt-8 text-white font-bold ">
-            Transform your ChatGPT experience with our prompts 🚀
-          </h2>{" "}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
+            exit={{ opacity: 0, y: 20 }}
+            className="text-2xl sm:text-3xl   pt-8 text-white font-bold "
+          >
+            Enhance your ChatGPT experience with our prompts 🚀
+          </motion.div>{" "}
           <p className="text-slate-400 text-sm mt-2 mb-12 ">
-            Unlock our open library of GPT Prompts with new prompts being added
-            everyday.
+            The GPT Prompts Project is an open platform for sharing ChatGPT
+            prompts. Join our community today and start sharing and exploring
+            prompts.
           </p>
         </div>
       </div>
