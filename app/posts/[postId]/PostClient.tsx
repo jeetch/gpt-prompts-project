@@ -41,7 +41,7 @@ const PostClient: FC<PostClientProps> = ({ post, currentUser }) => {
           id={post.id}
           currentUser={currentUser}
           description={post.description ?? undefined}
-          source={post.source}
+          source={post.source ?? undefined}
         />
         <PostInfo category={category} prompt={post.prompt} />
       </div>
