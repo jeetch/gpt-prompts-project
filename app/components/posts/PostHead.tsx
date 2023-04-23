@@ -12,6 +12,7 @@ interface PostHeadProps {
   id: string;
   currentUser?: SafeUser | null;
   description?: string;
+  source?: string;
 }
 
 const PostHead: FC<PostHeadProps> = ({
@@ -21,6 +22,7 @@ const PostHead: FC<PostHeadProps> = ({
   currentUser,
   favorites,
   description,
+  source,
 }) => {
   return (
     <>
