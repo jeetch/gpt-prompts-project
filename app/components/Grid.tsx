@@ -10,8 +10,7 @@ const Grid: FC<GridProps> = ({ posts }) => {
   const breakpointColumnsObj = {
     default: 4,
     1800: 3,
-    1500: 2,
-    1000: 1,
+    800: 2,
     500: 1,
   };
 
