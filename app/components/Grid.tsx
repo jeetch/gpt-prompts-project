@@ -9,19 +9,26 @@ interface GridProps {
 const Grid: FC<GridProps> = ({ posts }) => {
   const breakpointColumnsObj = {
     default: 4,
+    2000: 4,
     1800: 3,
-    900: 2,
-    500: 1,
+    1200: 2,
+    600: 1,
   };
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
+    <div
+      className="
+            pt-4 pb-8 px-4 lg:px-8 xl:px-10
+            "
     >
-      {posts}
-    </Masonry>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {posts}
+      </Masonry>
+    </div>
   );
 };
 

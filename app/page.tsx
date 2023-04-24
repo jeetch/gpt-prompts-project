@@ -31,13 +31,7 @@ const Home = async ({ searchParams }: HomeProps) => {
     <ClientOnly>
       <PageWrapper>
         <Container>
-          <div
-            className="
-            pt-4 pb-8 px-4 
-            "
-          >
-            <Grid posts={cards} />
-          </div>
+          <Grid posts={cards} />
         </Container>
       </PageWrapper>
     </ClientOnly>

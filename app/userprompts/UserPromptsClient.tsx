@@ -64,14 +64,8 @@ const UserPromptsClient: FC<UserPromptsClientProps> = ({
     <Container>
       <div className="p-4">
         <Heading title="Prompts" subtitle="List of your submitted prompts" />
-        <div
-          className="
-        pt-8 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  xl:grid-cols-4 2xl:grid-cols-4
-        gap-8  
-        "
-        >
-          <Grid posts={cards} />
-        </div>
+
+        <Grid posts={cards} />
       </div>
     </Container>
   );

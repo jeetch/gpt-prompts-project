@@ -23,13 +23,7 @@ const FavoritesClient: FC<FavoritesClientProps> = ({ posts, currentUser }) => {
           subtitle="List of prompts you have favorited"
         />
 
-        <div
-          className="
-        pt-4 md:px-10 
-        "
-        >
-          <Grid posts={cards} />
-        </div>
+        <Grid posts={cards} />
       </div>
     </Container>
   );
