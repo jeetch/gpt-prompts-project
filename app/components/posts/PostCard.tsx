@@ -145,7 +145,10 @@ const PostCard: FC<PostCardProps> = ({
         {data.title}
       </div>
       {/* Description */}
-      <p className="text-slate-400 text-sm ">
+      <p
+        className="text-slate-400 text-sm hover:cursor-pointer"
+        onClick={() => router.push(`/posts/${data.id}`)}
+      >
         {data?.description}{" "}
         <a className="text-slate-400 text-xs font-light ">{n_words}</a>
       </p>
