@@ -16,19 +16,15 @@ import SearchHeader from "./components/SearchHeader";
 import Banner from "./components/Banner";
 import CategoryBanner from "./components/CategoryBanner";
 import { PageWrapper } from "./components/PageWrapper";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "GPT Prompts Project",
-  description:
-    "GPT Prompts Project is an open platform for sharing user-generated prompts that are optimized for use with OpenAI's GPT technology. Our community-driven website offers a diverse range of prompts for free, providing inspiration and support for writers, artists, and other creatives. Join our community today and start sharing and exploring GPT-optimized prompts.",
+  description: "Open GPT Prompts Library",
   openGraph: {
     title: "GPT Prompts Project",
-    description:
-      "The GPT Prompts Project is an open platform for sharing user-generated prompts that are optimized for use with OpenAI's GPT technology. Our community-driven website offers a diverse range of prompts for free, providing inspiration and support for writers, artists, and other creatives. Join our community today and start sharing and exploring GPT-optimized prompts.",
+    description: "Open GPT Prompts Library",
     type: "website",
     images: ["https://www.gptpromptsproject.com/images/readme.jpg"],
-    url: "https://gptpromptsproject.com",
   },
 };
 
