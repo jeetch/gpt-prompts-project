@@ -16,10 +16,15 @@ export default async function getPosts(
       search, 
     } = params;
 
-    let query: any = {
-      userId,
-      category,
-    };
+    let query: any = {};
+
+if (userId) {
+  query.userId = userId;
+}
+
+if (category) {
+  query.category = category;
+}
 
     if (search) {
       query = {
