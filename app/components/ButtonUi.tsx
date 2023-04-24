@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-sky-900 text-neutral-400 hover:bg-slate-700 dark:bg-slate-50 dark:text-slate-900",
+          "bg-emerald-700 hover:bg-emerald-600 shadow-sm hover:shadow-md hover:to-sky-700 transition text-neutral-200 ",
         destructive:
           "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
         outline:
@@ -20,7 +20,7 @@ const buttonVariants = cva(
           "bg-emerald-900 hover:text-slate-100 text-emerald-100 hover:bg-emerald-800 ",
         ghost:
           "bg-transparent hover:bg-emerald-500 dark:hover:bg-sky-900 dark:text-slate-400 dark:hover:text-slate-100",
-        link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
+        link: "bg-transparent text-slate-300 hover:text-slate-400 hover:bg-transparent",
       },
       size: {
         default: "h-10 py-2 px-4",
