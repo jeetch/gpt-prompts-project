@@ -33,13 +33,13 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
             exit={{ opacity: 0, y: 20 }}
             className="text-2xl sm:text-3xl   pt-8 text-white font-bold "
           >
-            Enhance your ChatGPT experience with our prompts 🚀
-          </motion.div>{" "}
-          <p className="text-slate-400 text-sm mt-2 mb-12 ">
-            The GPT Prompts Project is an open platform for sharing ChatGPT
-            prompts. Join our community today and start sharing and exploring
-            prompts.
-          </p>
+            Enhance your ChatGPT experience with our prompts 🚀{" "}
+            <p className="text-slate-400 text-sm mt-2 mb-12 ">
+              The GPT Prompts Project is an open platform for sharing ChatGPT
+              prompts. Join our community today and start sharing and exploring
+              prompts.
+            </p>
+          </motion.div>
         </div>
       </div>
     </>

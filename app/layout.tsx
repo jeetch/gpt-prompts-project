@@ -16,8 +16,9 @@ import SearchHeader from "./components/SearchHeader";
 import Banner from "./components/Banner";
 import CategoryBanner from "./components/CategoryBanner";
 import { PageWrapper } from "./components/PageWrapper";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "GPT Prompts Project",
   description: "Open GPT Prompts Library",
 };
