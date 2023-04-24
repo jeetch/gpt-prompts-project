@@ -5,6 +5,7 @@ import EmptyState from "./components/EmptyState";
 import PostCard from "./components/posts/PostCard";
 import ClientOnly from "./components/ClientOnly";
 import { PageWrapper } from "./components/PageWrapper";
+import Grid from "./components/Grid";
 
 interface HomeProps {
   searchParams: IPostParams;
@@ -14,6 +15,10 @@ const Home = async ({ searchParams }: HomeProps) => {
   const posts = await getPosts(searchParams);
 
   const currentUser = await getCurrentUser();
+
+  const cards = posts.map((post) => {
+    return <PostCard currentUser={currentUser} key={post.id} data={post} />;
+  });
 
   if (posts.length == 0) {
     return (
@@ -28,15 +33,10 @@ const Home = async ({ searchParams }: HomeProps) => {
         <Container>
           <div
             className="
-            pt-2 pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4
-            gap-8  
+            pt-4 pb-8 px-4 
             "
           >
-            {posts.map((post) => {
-              return (
-                <PostCard currentUser={currentUser} key={post.id} data={post} />
-              );
-            })}
+            <Grid posts={cards} />
           </div>
         </Container>
       </PageWrapper>

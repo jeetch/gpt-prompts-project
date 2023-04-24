@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import PostCard from "../components/posts/PostCard";
+import Grid from "../components/Grid";
 
 interface UserPromptsClientProps {
   posts: SafePost[];
@@ -47,6 +48,18 @@ const UserPromptsClient: FC<UserPromptsClientProps> = ({
     [router]
   );
 
+  const cards = posts.map((post) => (
+    <PostCard
+      key={post.id}
+      data={post}
+      actionId={post.id}
+      onAction={onCancel}
+      disabled={deletingId == post.id}
+      actionLabel="Delete Prompt"
+      currentUser={currentUser}
+    />
+  ));
+
   return (
     <Container>
       <div className="p-4">
@@ -57,17 +70,7 @@ const UserPromptsClient: FC<UserPromptsClientProps> = ({
         gap-8  
         "
         >
-          {posts.map((post) => (
-            <PostCard
-              key={post.id}
-              data={post}
-              actionId={post.id}
-              onAction={onCancel}
-              disabled={deletingId == post.id}
-              actionLabel="Delete Prompt"
-              currentUser={currentUser}
-            />
-          ))}
+          <Grid posts={cards} />
         </div>
       </div>
     </Container>

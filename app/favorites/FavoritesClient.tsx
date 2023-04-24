@@ -3,6 +3,7 @@ import { SafePost, SafeUser } from "../types";
 import Heading from "../components/Heading";
 import Container from "../components/Container";
 import PostCard from "../components/posts/PostCard";
+import Grid from "../components/Grid";
 
 interface FavoritesClientProps {
   posts: SafePost[];
@@ -10,6 +11,10 @@ interface FavoritesClientProps {
 }
 
 const FavoritesClient: FC<FavoritesClientProps> = ({ posts, currentUser }) => {
+  const cards = posts.map((post) => (
+    <PostCard key={post.id} data={post} currentUser={currentUser} />
+  ));
+
   return (
     <Container>
       <div className="p-4">
@@ -20,13 +25,10 @@ const FavoritesClient: FC<FavoritesClientProps> = ({ posts, currentUser }) => {
 
         <div
           className="
-        pt-4 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  xl:grid-cols-4 2xl:grid-cols-4
-        gap-8  
+        pt-4 md:px-10 
         "
         >
-          {posts.map((post) => (
-            <PostCard key={post.id} data={post} currentUser={currentUser} />
-          ))}
+          <Grid posts={cards} />
         </div>
       </div>
     </Container>

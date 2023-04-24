@@ -18,13 +18,13 @@ export default async function getPosts(
 
     let query: any = {};
 
-if (userId) {
-  query.userId = userId;
-}
+  if (userId) {
+    query.userId = userId;
+  }
 
-if (category) {
-  query.category = category;
-}
+  if (category) {
+    query.category = category;
+  }
 
     if (search) {
       query = {
