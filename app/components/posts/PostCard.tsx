@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useCallback, useMemo, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { SafePost, SafeUser } from "@/app/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import HeartButton from "../HeartButton";
@@ -11,7 +11,6 @@ import { toast } from "react-hot-toast";
 import { SiOpenai } from "react-icons/si";
 import { categories } from "../navbar/Categories";
 import qs from "query-string";
-import ShowMoreText from "react-show-more-text";
 import { AiFillEdit } from "react-icons/ai";
 import Link from "next/link";
 
