@@ -20,7 +20,16 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GPT Prompts Project",
-  description: "Open GPT Prompts Library",
+  description:
+    "GPT Prompts Project is an open platform for sharing user-generated prompts that are optimized for use with OpenAI's GPT technology. Our community-driven website offers a diverse range of prompts for free, providing inspiration and support for writers, artists, and other creatives. Join our community today and start sharing and exploring GPT-optimized prompts.",
+  openGraph: {
+    title: "GPT Prompts Project",
+    description:
+      "The GPT Prompts Project is an open platform for sharing user-generated prompts that are optimized for use with OpenAI's GPT technology. Our community-driven website offers a diverse range of prompts for free, providing inspiration and support for writers, artists, and other creatives. Join our community today and start sharing and exploring GPT-optimized prompts.",
+    type: "website",
+    images: ["https://www.gptpromptsproject.com/images/readme.jpg"],
+    url: "https://gptpromptsproject.com",
+  },
 };
 
 const font = Inter({
