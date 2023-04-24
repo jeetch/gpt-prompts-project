@@ -1,8 +1,7 @@
 "use client";
 import useSearchModal from "@/app/hooks/useSearchModal";
-import { FC, useCallback, useState, useRef, useEffect } from "react"; // Updated imports
-import Modal from "./Modal";
-import { useRouter, useSearchParams } from "next/navigation"; // Corrected import
+import { FC, useCallback, useState, useRef, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string";
 import Heading from "../Heading";
 import SearchModalContainer from "./SearchModalContainer";
@@ -12,25 +11,19 @@ interface SearchModalProps {}
 
 export const topsearches = [
   {
-    description: "This property is has windmills!",
+    description: "resume Edit",
   },
   {
-    description: "This property is has windmills!",
+    description: "emails",
   },
   {
-    description: "This property is modern!",
+    description: "writing",
   },
   {
-    description: "This property is in the countryside!",
+    description: "interview",
   },
   {
-    description: "This is property has a beautiful pool!",
-  },
-  {
-    description: "This property is on an island!",
-  },
-  {
-    description: "This property is near a lake!",
+    description: "learn language",
   },
 ];
 
