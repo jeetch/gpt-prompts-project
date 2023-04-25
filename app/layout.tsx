@@ -42,24 +42,21 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>
-          GPT Prompts Project: GPT Prompts Project is an open platform for
-          sharing ChatGPT prompts.
-        </title>
+        <title>GPT Prompts Project: Explore and Share Free GPT Prompts</title>
         <meta
           name="description"
-          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+          content="We are an open platform for sharing GPT-optimized prompts; fostering collaboration, expanding AI accessibility, and promoting knowledge sharing"
         />
 
         <meta property="og:url" content="https://www.gptpromptsproject.com/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+          content="GPT Prompts Project: Explore and Share Free GPT Prompts"
         />
         <meta
           property="og:description"
-          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+          content="We are an open platform for sharing GPT-optimized prompts; fostering collaboration, expanding AI accessibility, and promoting knowledge sharing"
         />
         <meta
           property="og:image"
@@ -74,11 +71,11 @@ export default async function RootLayout({
         />
         <meta
           name="twitter:title"
-          content="GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+          content="GPT Prompts Project: Explore and Share Free GPT Prompts"
         />
         <meta
           name="twitter:description"
-          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+          content="We are an open platform for sharing GPT-optimized prompts; fostering collaboration, expanding AI accessibility, and promoting knowledge sharing"
         />
         <meta
           name="twitter:image"
