@@ -17,16 +17,16 @@ import Banner from "./components/Banner";
 import CategoryBanner from "./components/CategoryBanner";
 import { PageWrapper } from "./components/PageWrapper";
 
-export const metadata = {
-  title: "GPT Prompts Project",
-  description: "Open GPT Prompts Library",
-  openGraph: {
-    title: "GPT Prompts Project",
-    description: "Open GPT Prompts Library",
-    type: "website",
-    images: ["/images/readme.jpg"],
-  },
-};
+// export const metadata = {
+//   title: "GPT Prompts Project",
+//   description: "Open GPT Prompts Library",
+//   openGraph: {
+//     title: "GPT Prompts Project",
+//     description: "Open GPT Prompts Library",
+//     type: "website",
+//     images: ["/images/readme.jpg"],
+//   },
+// };
 
 const font = Inter({
   subsets: ["latin"],
