@@ -96,7 +96,7 @@ const Categories: FC<CategoriesProps> = ({}) => {
 
   return (
     <Container>
-      <div className="flex flex-wrap justify-center sm:p-4 px-2 items-center  gap-2 ">
+      <div className="flex flex-wrap justify-center sm:p-4 px-2 items-center  gap-2 mt-20 sm:mt-16">
         <div
           onClick={() => router.push("/")}
           className={`text-xs sm:text-sm p-1 px-2 sm:p-2 sm:gap-2  md:gap-4

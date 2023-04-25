@@ -28,7 +28,7 @@ const PostClient: FC<PostClientProps> = ({ post, currentUser }) => {
       <button
         type="button"
         onClick={() => router.back()}
-        className="mt-4 flex items-center text-slate-400 text-sm hover:text-emerald-500"
+        className="mt-20 flex items-center text-slate-400 text-sm hover:text-emerald-500"
       >
         <IoChevronBack />
         Back

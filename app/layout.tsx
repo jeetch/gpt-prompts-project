@@ -24,7 +24,7 @@ export const metadata = {
     title: "GPT Prompts Project",
     description: "Open GPT Prompts Library",
     type: "website",
-    images: ["https://www.gptpromptsproject.com/images/readme.jpg"],
+    images: ["/images/readme.jpg"],
   },
 };
 
@@ -41,7 +41,21 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`relative ${font.className}  bg-sky-950 `}>
+      <head>
+        <meta property="og:title" content="GPT Prompts Project" />
+        <meta
+          property="og:description"
+          content="Explore and Share ChatGPT Prompts"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://gptpromptsproject.com/" />
+        <meta
+          property="og:image"
+          content="https://gptpromptsproject.com/images/readme.jpg"
+        />
+        <meta property="og:image" content="/images/readme.jpg" />
+      </head>
+      <body className={`relative ${font.className} bg-sky-950 bg-cover`}>
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal />

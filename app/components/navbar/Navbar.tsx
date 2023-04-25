@@ -17,11 +17,12 @@ const Navbar: FC<NavbarProps> = ({ currentUser }) => {
     <>
       <div
         className="
-        w-full bg-sky-950 z-10 shadow-sm
+        w-full bg-none z-20 shadow-sm
             py-4
             border-emerald-500
             text-slate-200
-            sticky top-0 
+            top-0 fixed
+            backdrop-blur-sm
             "
       >
         <Container>
