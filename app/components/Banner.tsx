@@ -29,7 +29,7 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
     <>
       <div className="relative">
         <div
-          className={`text-center px-4 sm:px-12 xl:px-64 py-8  lg:mb-4 ${
+          className={`text-center px-4 sm:px-12 xl:px-64 py-8  lg:mb-8 ${
             searchQuery || category || currentUser || notIsHome
               ? "hidden"
               : "block"
@@ -41,15 +41,12 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
             exit={{ opacity: 0, y: 20 }}
             className=""
           >
-            <div className="flex gap-2 items-center justify-center">
-              <div className="text-2xl sm:text-3xl  font-semibold bg-gradient-to-l from-indigo-400 from-10% via-sky-400 via-30% to-emerald-400 to-90% bg-clip-text text-transparent ">
-                Enhance your ChatGPT experience with our prompts
-              </div>
-              <div className="text-2xl sm:text-3xl  text-white font-semibold  ">
-                🚀
-              </div>
+            <div className="text-2xl sm:text-4xl p-2  font-semibold bg-gradient-to-l from-indigo-400 from-10% via-sky-400 via-30% to-emerald-400 to-90% bg-clip-text text-transparent ">
+              Enhance your ChatGPT experience with our prompts
+              <a className=" text-white ml-2 ">🚀</a>
             </div>
-            <p className="text-slate-400 text-sm mt-2 mb-4">
+
+            <p className="text-slate-400 text-sm mt-2 mb-4 p-2">
               GPT Prompts Project is an open platform for sharing ChatGPT
               prompts. Join our community today and start sharing and exploring
               prompts.
@@ -70,7 +67,7 @@ const Banner: FC<BannerProps> = ({ currentUser }) => {
               👋 Sign Up
             </ButtonUi>
             <ButtonUi variant="link" size="lg" onClick={loginModal.onOpen}>
-              🏠 Login
+              Login
             </ButtonUi>
           </motion.div>
         </div>

@@ -18,10 +18,10 @@ import CategoryBanner from "./components/CategoryBanner";
 import { PageWrapper } from "./components/PageWrapper";
 
 // export const metadata = {
-//   title: "GPT Prompts Project",
+//   title: "GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts.",
 //   description: "Open GPT Prompts Library",
 //   openGraph: {
-//     title: "GPT Prompts Project",
+//     title: "GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts.",
 //     description: "Open GPT Prompts Library",
 //     type: "website",
 //     images: ["/images/readme.jpg"],
@@ -42,18 +42,48 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:title" content="GPT Prompts Project" />
+        <title>
+          GPT Prompts Project: GPT Prompts Project is an open platform for
+          sharing ChatGPT prompts.
+        </title>
+        <meta
+          name="description"
+          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+        />
+
+        <meta property="og:url" content="https://www.gptpromptsproject.com/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+        />
         <meta
           property="og:description"
-          content="Explore and Share ChatGPT Prompts"
+          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://gptpromptsproject.com/" />
         <meta
           property="og:image"
           content="https://gptpromptsproject.com/images/readme.jpg"
         />
-        <meta property="og:image" content="/images/readme.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="gptpromptsproject.com" />
+        <meta
+          property="twitter:url"
+          content="https://www.gptpromptsproject.com/"
+        />
+        <meta
+          name="twitter:title"
+          content="GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+        />
+        <meta
+          name="twitter:description"
+          content="GPT Prompts Project is an open platform for sharing ChatGPT prompts."
+        />
+        <meta
+          name="twitter:image"
+          content="https://gptpromptsproject.com/images/readme.jpg"
+        />
       </head>
       <body className={`relative ${font.className} bg-sky-950 bg-cover`}>
         <ClientOnly>

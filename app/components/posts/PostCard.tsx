@@ -122,7 +122,7 @@ const PostCard: FC<PostCardProps> = ({
   }, [data.category, params, router]);
 
   return (
-    <div className="h-fit relative flex flex-col col-span-1 gap-y-2  bg-gradient-to-t  from-emerald-900/10 via-sky-800/10 to-sky-950 group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4 ">
+    <div className="h-fit relative flex flex-col col-span-1 gap-y-2  bg-gradient-to-t  from-emerald-900/20 via-sky-800/10 to-sky-950 group border hover:border-emerald-700 border-emerald-900 rounded-md shadow-md hover:shadow-xl p-4 ">
       <div className="absolute top-2 right-2 scale-75 ">
         <HeartButton
           postId={data.id}
