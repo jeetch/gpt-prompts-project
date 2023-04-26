@@ -24,8 +24,7 @@ export const categories = [
   {
     label: "Education and Research",
     icon: "📝",
-    description:
-      "Explore prompts related to literature, writing techniques, and author insights",
+    description: "Explore prompts for anyone in academics and reasearch",
   },
 
   {
