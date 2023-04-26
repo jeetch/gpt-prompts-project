@@ -17,7 +17,7 @@ const FavoritesClient: FC<FavoritesClientProps> = ({ posts, currentUser }) => {
 
   return (
     <Container>
-      <div className="p-4">
+      <div className="p-4 mt-16">
         <Heading
           title="Favorites"
           subtitle="List of prompts you have favorited"
