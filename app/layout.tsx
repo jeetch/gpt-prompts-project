@@ -17,17 +17,6 @@ import Banner from "./components/Banner";
 import CategoryBanner from "./components/CategoryBanner";
 import { PageWrapper } from "./components/PageWrapper";
 
-// export const metadata = {
-//   title: "GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts.",
-//   description: "Open GPT Prompts Library",
-//   openGraph: {
-//     title: "GPT Prompts Project: GPT Prompts Project is an open platform for sharing ChatGPT prompts.",
-//     description: "Open GPT Prompts Library",
-//     type: "website",
-//     images: ["/images/readme.jpg"],
-//   },
-// };
-
 const font = Inter({
   subsets: ["latin"],
 });

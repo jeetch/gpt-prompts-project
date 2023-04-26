@@ -5,11 +5,8 @@ import { FC } from "react";
 import { SafeUser } from "../types";
 import { motion } from "framer-motion";
 import { ButtonUi } from "./ButtonUi";
-import { AiFillEdit } from "react-icons/ai";
-import { IoCopy } from "react-icons/io5";
 import useLoginModal from "../hooks/useLoginModal";
 import useRegisterModal from "../hooks/useRegisterModal";
-import RegisterModal from "./modals/RegisterModal";
 
 interface BannerProps {
   currentUser?: SafeUser | null;

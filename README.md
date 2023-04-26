@@ -1,44 +1,40 @@
 
-## GPT Prompts Project
+# 🤖 GPT Prompts Project
 
 ![https://www.gptpromptsproject.com/images/readme](https://www.gptpromptsproject.com/images/readme.jpg)
 
+[Live Here](https://www.gptpromptsproject.com/)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+One of the current challenges in the AI space is that the technology is very powerful, but it is not being utilized to its full potential. We believe in contributing to the open development of AI for all. By providing a platform for sharing useful prompts that are optimized for use with OpenAI's GPT technology, we can help people build more tools and make GPT more accessible to everyone. Our goal is to encourage the open sharing of knowledge and resources, so that the potential of AI can be fully realized by everyone, regardless of their background or level of expertise.
 
-First, run the development server:
+## Features 📋
+⚡️ Open Library for Exploring and Sharing GPT Optimized Prompts
+⚡️ One-click copy prompt and open ChatGPT or Edit the prompt and use 
+⚡️ Users can favorite prompts and will be saved in favorites page
+⚡️ Users can submit and delete prompts
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tools Used 🛠️
+NextJS 13, MongoDB, Prisma, Tailwind, NextAuth...
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing 💡
+#### Step 1
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Option 1**
+    - 🍴 Fork this repo!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Option 2**
+    - 👯 Clone this repo to your local machine.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+#### Step 2
 
-To learn more about Next.js, take a look at the following resources:
+- Build your code 🔨
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Step 3
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 🔃 Create a new pull request.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License 📄
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
