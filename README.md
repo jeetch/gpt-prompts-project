@@ -27,7 +27,6 @@ NextJS 13, MongoDB, Prisma, Tailwind, NextAuth...
 - **Option 2**
     - 👯 Clone this repo to your local machine.
 
-
 #### Step 2
 
 - Build your code 🔨
