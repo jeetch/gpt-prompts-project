@@ -46,7 +46,7 @@ const Search: FC<SearchProps> = ({}) => {
     w-full
     sm:w-2/6
     lg:w-1/2
-   
+    bg-sky-950
     py-1
     rounded-full
     shadow-sm

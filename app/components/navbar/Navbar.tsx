@@ -19,10 +19,12 @@ const Navbar: FC<NavbarProps> = ({ currentUser }) => {
         className="
         w-full bg-none z-20 shadow-sm
             py-4
-            border-emerald-500
+            border-b
+            border-emerald-500/20
             text-slate-200
             top-0 fixed
             backdrop-blur-sm
+            
             "
       >
         <Container>
